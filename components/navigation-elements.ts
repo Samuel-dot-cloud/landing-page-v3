@@ -31,7 +31,7 @@ export const MenuItem = styled.li`
   &::after {
     content: ' ';
     display: block;
-    width: 0%;
+    width: 0;
     height: 2px;
     background: ${props => props.theme.text};
     transition: width 0.3s ease;

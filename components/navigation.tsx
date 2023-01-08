@@ -1,5 +1,6 @@
 import {Menu, MenuItem, NavBar, Section} from "./navigation-elements";
 import Logo from "./logo";
+import Button from "./button";
 
 const Navigation = () => {
     return (
@@ -13,7 +14,7 @@ const Navigation = () => {
                     <MenuItem>Projects</MenuItem>
                     <MenuItem>Footer</MenuItem>
                 </Menu>
-                <h2>Button</h2>
+                <Button link="https://samwahome.netlify.app" text="Connect Wallet"/>
             </NavBar>
         </Section>
     )
