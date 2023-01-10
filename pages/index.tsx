@@ -4,6 +4,7 @@ import {ThemeProvider} from "styled-components";
 import {light} from "../styles/themes";
 import Navigation from "../components/navigation";
 import Top from "../sections/home";
+import About from "../sections/about";
 
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <ThemeProvider theme={light}>
             <Navigation/>
             <Top/>
+            <About/>
         </ThemeProvider>
       </main>
     </>

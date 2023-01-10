@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Section = styled.section`
   min-height: ${props => `calc(100vh - ${props.theme.navHeight})`};
   width: 100vw;
@@ -19,7 +18,7 @@ export const Container = styled.div`
 `;
 
 export const Box = styled.div`
-    width: 50%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
