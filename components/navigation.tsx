@@ -10,9 +10,9 @@ const Navigation = () => {
                 <Menu>
                     <MenuItem>Home</MenuItem>
                     <MenuItem>About</MenuItem>
-                    <MenuItem>Stack</MenuItem>
+                    <MenuItem>Experience</MenuItem>
                     <MenuItem>Projects</MenuItem>
-                    <MenuItem>Footer</MenuItem>
+                    {/*<MenuItem>Footer</MenuItem>*/}
                 </Menu>
                 <Button link="https://samwahome.netlify.app" text="Connect Wallet"/>
             </NavBar>

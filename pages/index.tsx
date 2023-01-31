@@ -4,7 +4,12 @@ import {ThemeProvider} from "styled-components";
 import {light} from "../styles/themes";
 import Navigation from "../components/navigation";
 import Top from "../sections/home";
+import Tools from "../sections/tools";
 import About from "../sections/about";
+import Stack from "../sections/stack";
+import Projects from "../sections/projects";
+import Books from "../sections/books";
+import Podcasts from "../sections/podcasts";
 
 
 export default function Home() {
@@ -23,6 +28,11 @@ export default function Home() {
             <Navigation/>
             <Top/>
             <About/>
+            {/*<Stack/>*/}
+            <Projects/>
+            {/*<Tools/>*/}
+            <Books/>
+            <Podcasts/>
         </ThemeProvider>
       </main>
     </>
