@@ -7,9 +7,11 @@ import Top from "../sections/home";
 import Tools from "../sections/tools";
 import About from "../sections/about";
 import Stack from "../sections/stack";
-import Projects from "../sections/projects";
+import Experience from "../sections/experience";
 import Books from "../sections/books";
 import Podcasts from "../sections/podcasts";
+import Projects from '../sections/projects';
+import Footer from "../sections/footer";
 
 
 export default function Home() {
@@ -29,10 +31,12 @@ export default function Home() {
             <Top/>
             <About/>
             {/*<Stack/>*/}
-            <Projects/>
+            <Experience/>
             {/*<Tools/>*/}
             <Books/>
             <Podcasts/>
+            <Projects/>
+            <Footer/>
         </ThemeProvider>
       </main>
     </>

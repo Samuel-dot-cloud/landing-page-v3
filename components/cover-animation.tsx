@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import {AnimationContainer} from "./cover-animation-elements";
-import devAnimation from "../assets/developer.json"
+import devAnimation from "../assets/web.json"
 
 
 const CoverAnimation = () => {
