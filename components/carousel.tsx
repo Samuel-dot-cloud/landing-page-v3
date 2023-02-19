@@ -13,8 +13,6 @@ import {SwiperModule} from "swiper/types";
 export interface CarouselItem {
     id: number;
     image: string;
-    title: string;
-    subTitle: string;
 }
 
 const Carousel = ({modules, items}: { modules: SwiperModule[], items: CarouselItem[] }) => {
@@ -41,13 +39,7 @@ const Carousel = ({modules, items}: { modules: SwiperModule[], items: CarouselIt
                     <SwiperSlide key={item.id}>
                         <Box>
                             <Image height={180} width={180} src={item.image}
-                                   alt={item.title}/>
-                            <Title>
-                                {item.title}
-                            </Title>
-                            <Subtitle>
-                                {item.subTitle}
-                            </Subtitle>
+                                   alt=""/>
                         </Box>
                     </SwiperSlide>
                 )}

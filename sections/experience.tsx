@@ -31,8 +31,8 @@ function TabPanel(props: TabPanelProps) {
                     <SubText>
                         {timePeriod}
                     </SubText>
-                    {details.map(detail =>
-                        <SubTextLight key={index}>
+                    {details.map((detail, detailIndex) =>
+                        <SubTextLight key={`${index}-${detailIndex}`}>
                             {detail}
                         </SubTextLight>
                     )}
@@ -58,7 +58,7 @@ const Experience = () => {
     };
 
     return (
-        <Section>
+        <Section id="experience">
             <LargeTitle>
                 Experience
             </LargeTitle>

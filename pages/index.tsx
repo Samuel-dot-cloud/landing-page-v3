@@ -1,17 +1,16 @@
 import Head from 'next/head'
 import {GlobalStyles} from "../styles/globals";
 import {ThemeProvider} from "styled-components";
-import {light} from "../styles/themes";
+import {dark, light} from "../styles/themes";
 import Navigation from "../components/navigation";
 import Top from "../sections/home";
-import Tools from "../sections/tools";
 import About from "../sections/about";
-import Stack from "../sections/stack";
 import Experience from "../sections/experience";
 import Books from "../sections/books";
 import Podcasts from "../sections/podcasts";
 import Projects from '../sections/projects';
 import Footer from "../sections/footer";
+import ScrollToTop from "../components/scroll-to-top";
 
 
 export default function Home() {
@@ -25,8 +24,8 @@ export default function Home() {
       </Head>
       
       <main>
-        <GlobalStyles />
-        <ThemeProvider theme={light}>
+        <GlobalStyles/>
+        <ThemeProvider theme={dark}>
             <Navigation/>
             <Top/>
             <About/>
@@ -37,6 +36,7 @@ export default function Home() {
             <Podcasts/>
             <Projects/>
             <Footer/>
+            <ScrollToTop/>
         </ThemeProvider>
       </main>
     </>

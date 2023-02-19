@@ -6,26 +6,18 @@ const podcastItems: CarouselItem[] = [
     {
         id: 1,
         image: "/podcast/codenewbie.jpg",
-        title: "",
-        subTitle: "CodeNewbie podcast born from organization fostering supportive community of coders.",
     },
     {
         id: 2,
         image: "/podcast/coffee_coding_pod.png",
-        title: "",
-        subTitle: "Interviews & insights with experienced developer's across all aspects of App Development.",
     },
     {
         id: 3,
         image: "/podcast/swift-by-sundell.jpg",
-        title: "",
-        subTitle: "In-depth conversations about Swift and software development in general, hosted by John Sundell",
     },
     {
         id: 4,
         image: "/podcast/syntax.jpg",
-        title: "",
-        subTitle: "Full Stack Developers Bos and Tolinski explore web dev topics, explaining & sharing experiences.",
     },
 ];
 

@@ -1,4 +1,6 @@
-export const light = {
+import {DefaultTheme} from "styled-components";
+
+export const light: DefaultTheme = {
 
     body: "#ffffff",
     text: "#202020",
@@ -20,7 +22,7 @@ export const light = {
     navHeight: '5rem',
 }
 
-export const dark = {
+export const dark: DefaultTheme = {
 
     body: "#202020",
     text: "#ffffff",

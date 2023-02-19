@@ -5,7 +5,7 @@ import CoverAnimation from "../components/cover-animation";
 
 const Top = () => {
     return (
-        <Section>
+        <Section id="home">
             <Container>
                 <Box>
                     <TypewriterText/>

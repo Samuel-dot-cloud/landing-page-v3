@@ -17,6 +17,19 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  @media (max-width: 70em) {
+    width: 85%;
+  }
+  
+  @media (max-width: 64em) {
+    width: 100%;
+    flex-direction: column;
+    
+    &>*:last-child {
+      width: 80%;
+    }
+  }
 `;
 
 export const Box = styled.div`

@@ -6,14 +6,10 @@ const bookItems: CarouselItem[] = [
     {
         id: 1,
         image: "/books/ios-15.jpeg",
-        title: "",
-        subTitle: "iOS 15 Programming Fundamentals with Swift",
     },
     {
         id: 2,
         image: "/books/react-cookbook.jpeg",
-        title: "",
-        subTitle: "React Cookbook",
     },
 ];
 
