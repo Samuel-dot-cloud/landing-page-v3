@@ -1,22 +1,12 @@
 import styled from "styled-components";
 
 export const Title = styled.h2`
-    font-size: ${props => props.theme.fontxxl};
+  font-size: ${props => props.theme.fontxxl};
   text-transform: capitalize;
-  width: ${props => props.theme.text};
+  width: 80%;
+  color: ${props => props.theme.text};
   align-self: flex-start;
-  
-  span {
-    text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
-  }
-  .text-1 {
-    color: blueviolet;
-  }
-  .text-2 {
-    color: brown;
-  }
-  
+
   @media (max-width: 70em) {
     font-size: ${props => props.theme.fontxl};
   }

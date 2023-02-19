@@ -47,7 +47,7 @@ export const Menu = styled.ul<{click: boolean}>`
     background-color: ${props => `rgba(${props.theme.bodyRgba},0.85)`};
     backdrop-filter: blur(2px);
 
-    transform: ${props => props.click ? `translateY(0)` : `translateY(100%)`};
+    transform: ${props => props.click ? `translateY(0)` : `translateY(1000%)`};
     transition: all 0.3s ease;
     flex-direction: column;
     justify-content: center;

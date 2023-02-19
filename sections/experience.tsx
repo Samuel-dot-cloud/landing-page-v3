@@ -2,7 +2,7 @@ import * as React from 'react';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import {LargeTitle, Section, SubText, SubTextLight, Title} from "./experience-elements";
-import {Tabs} from '@mui/material';
+import {Tabs, useMediaQuery} from '@mui/material';
 
 interface TabPanelProps {
     details: string[];
@@ -14,6 +14,7 @@ interface TabPanelProps {
 
 function TabPanel(props: TabPanelProps) {
     const {position, timePeriod, details, value, index, ...other} = props;
+    const isSmall = useMediaQuery('(max-width: 48em)');
 
     return (
         <div
@@ -24,7 +25,7 @@ function TabPanel(props: TabPanelProps) {
             {...other}
         >
             {value === index && (
-                <Box sx={{p: 3, m: 5, width: 500, height: '100%'}}>
+                <Box sx={{p: 3, m: 5, width: isSmall ? 150 : 500, height: '100%'}}>
                     <Title>
                         {position}
                     </Title>
@@ -52,6 +53,7 @@ function a11yProps(index: number) {
 
 const Experience = () => {
     const [value, setValue] = React.useState(0);
+    const isSmall = useMediaQuery('(max-width: 48em)');
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -63,20 +65,20 @@ const Experience = () => {
                 Experience
             </LargeTitle>
             <Box
-                sx={{flexGrow: 1, display: 'flex', mt: 2}}
+                sx={{flexGrow: 1, display: isSmall ? '' : 'flex', mt: 2}}
             >
                 <Tabs
-                    orientation="vertical"
+                    orientation={isSmall ? "horizontal": "vertical"}
                     value={value}
-                    variant="fullWidth"
+                    variant="standard"
                     onChange={handleChange}
                     textColor="primary"
                     indicatorColor="primary"
                     aria-label="Vertical tabs example"
                     sx={{borderRight: 1, borderColor: 'divider'}}
                     centered={true}>
-                    <Tab label="Kino AI" {...a11yProps(0)} />
-                    <Tab label="Senseg" {...a11yProps(1)} />
+                    <Tab label={<SubTextLight>Kino AI</SubTextLight>} {...a11yProps(0)} />
+                    <Tab label={<SubTextLight>Senseg</SubTextLight>} {...a11yProps(1)} />
                 </Tabs>
                 <TabPanel
                     value={value}
@@ -93,7 +95,7 @@ const Experience = () => {
                         '- Built up the Senseg V2 public-facing website using React and Material UI, which would serve as a point of reference for users looking to learn more about the service.',
                         '- Built RESTful APIs using NodeJS to verify phone numbers during sign-up on mobile, and also power the merchant charge experience on the web.',
                         '- Built internal tools using NodeJS and React to process and approve/deny transaction requests.',
-                        'Conducted tests, reviewed, and contributed code for the Senseg V2 app.']}
+                        '- Conducted tests, reviewed, and contributed code for the Senseg V2 app.']}
                     position="Software Engineer @Senseg"
                     timePeriod="Jan 2022 - Dec 2022"/>
             </Box>

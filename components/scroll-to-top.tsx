@@ -1,13 +1,11 @@
 import {Up} from "./scroll-to-top-elements";
-import {useEffect, useLayoutEffect, useRef} from "react";
+import {useLayoutEffect, useRef} from "react";
 import {useWindowScroll} from "react-use";
 
 const ScrollToTop = () => {
     const ref = useRef<HTMLDivElement>(null);
     const {y} = useWindowScroll();
 
-    const canUseDOM = typeof window !== 'undefined';
-    const useIsomorphicLayoutEffect = canUseDOM ? useLayoutEffect : useEffect;
     const scrollToTop = () => {
         let element = document.getElementById('navigation');
 
@@ -19,7 +17,7 @@ const ScrollToTop = () => {
 
     }
 
-    useIsomorphicLayoutEffect(() => {
+    useLayoutEffect(() => {
         if(y > 200) {
             ref!.current!.style.display = "flex"
         } else {

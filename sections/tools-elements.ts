@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const Section = styled.section`
   min-height: 100vh;
   width: 100%;
-  background-color: ${props => props.theme.text};
+  background-color: ${props => props.theme.body};
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 `;
 
 export const Container = styled.div`
@@ -57,7 +58,7 @@ export const Title = styled.h2`
   font-size: ${props => props.theme.fontxxl};
   text-transform: capitalize;
   width: 80%;
-  color: ${props => props.theme.body};
+  color: ${props => props.theme.text};
   align-self: flex-start;
   margin: 0 auto;
 
@@ -76,7 +77,7 @@ export const Title = styled.h2`
 export const SubText = styled.p`
   font-size: ${props => props.theme.fontlg};
   width: 80%;
-  color: ${props => props.theme.body};
+  color: ${props => props.theme.text};
   align-self: flex-start;
   margin: 1rem auto;
   font-weight: 400;
@@ -97,7 +98,7 @@ export const SubText = styled.p`
 export const SubTextLight = styled.p`
   font-size: ${props => props.theme.fontmd};
   width: 80%;
-  color: ${props => `rgba(${props.theme.bodyRgba},0.6)`};
+  color: ${props => `rgba(${props.theme.textRgba},0.6)`};
   align-self: flex-start;
   margin: 1rem auto;
   font-weight: 400;

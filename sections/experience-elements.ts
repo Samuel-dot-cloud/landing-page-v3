@@ -50,4 +50,14 @@ export const SubTextLight = styled.p`
   align-self: flex-start;
   margin: 1rem auto;
   font-weight: 400;
+
+  @media (max-width: 64em) {
+    font-size: ${props => props.theme.fontsm};
+  }
+  @media (max-width: 40em) {
+    font-size: ${props => props.theme.fontsm};
+  }
+  @media (max-width: 30em) {
+    font-size: ${props => props.theme.fontxs};
+  }
 `;

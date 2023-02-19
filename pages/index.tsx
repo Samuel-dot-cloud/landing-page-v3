@@ -29,9 +29,7 @@ export default function Home() {
             <Navigation/>
             <Top/>
             <About/>
-            {/*<Stack/>*/}
             <Experience/>
-            {/*<Tools/>*/}
             <Books/>
             <Podcasts/>
             <Projects/>

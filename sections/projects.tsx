@@ -1,15 +1,11 @@
 import {Box, Container, Section, SubText, SubTextLight, Title} from "./tools-elements";
 import Image from "next/image";
 import Link from "next/link";
-import {useEffect, useLayoutEffect, useRef} from "react";
+import {useLayoutEffect, useRef} from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 const Projects = () => {
-
-    // const canUseDOM = typeof window !== 'undefined';
-    // const useIsomorphicLayoutEffect = canUseDOM ? useLayoutEffect : useEffect;
-
     const ref = useRef(null);
     gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +31,7 @@ const Projects = () => {
         <Section ref={ref} id="projects">
             <Container>
                 <Box>
-                    <Image src="/projects/foodyshare.png" alt="Foodyshare project image" width={600} height={500}/>
+                    <Image src="/projects/foodyshare.png" alt="Foodyshare project image" width={100} height={100}/>
                 </Box>
                 <Box>
                     <Title>

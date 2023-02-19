@@ -1,5 +1,4 @@
 import {ButtonContainer, Subtitle, Title} from "./typewriter-text-elements"
-import Typewriter from "typewriter-effect"
 import Button from "./button";
 
 const TypewriterText = () => {
@@ -7,23 +6,6 @@ const TypewriterText = () => {
         <>
             <Title>
                 Hey there! I am Samuel
-
-                {/*<Typewriter*/}
-                {/*    options={{*/}
-                {/*        autoStart: true,*/}
-                {/*        loop: true,*/}
-                {/*    }}*/}
-                {/*    onInit={(typewriter) => {*/}
-                {/*        typewriter.typeString('<span class="text-1">I am a mobile and web developer.</span>')*/}
-                {/*            .pauseFor(2000)*/}
-                {/*            .deleteAll()*/}
-                {/*            .typeString('<span class="text-2">I love translating code into practical solutions.</span>')*/}
-                {/*            .pauseFor(2000)*/}
-                {/*            .deleteAll()*/}
-                {/*            .start()*/}
-                {/*    }}*/}
-                {/*/>*/}
-
             </Title>
 
             <Subtitle>

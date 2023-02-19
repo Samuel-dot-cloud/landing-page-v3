@@ -55,7 +55,7 @@ const About = () => {
                     </Stack>
                 </Box>
                 <Box>
-                    <Image src="/memoji.jpeg" alt="Profile image" width={450} height={450}/>
+                    <Image src="/memoji.jpeg" alt="Profile image" width={150} height={150}/>
                 </Box>
             </Container>
         </Section>

@@ -8,6 +8,7 @@ export const Section = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 `;
 
 export const Container = styled.div`

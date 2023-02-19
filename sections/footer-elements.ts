@@ -9,8 +9,7 @@ export const Section = styled.section`
   color: ${props => props.theme.text};
 
   display: flex;
-  //justify-content: center;
-  //align-items: center;
+  overflow: hidden;
   flex-direction: column;
 `;
 
@@ -61,7 +60,7 @@ export const Item = styled.li`
   &::after {
     content: ' ';
     display: block;
-    width: 0%;
+    width: 0;
     height: 2px;
     background: ${props => props.theme.text};
     transition: width 0.3s ease;
