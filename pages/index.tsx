@@ -6,8 +6,6 @@ import Navigation from "../components/navigation";
 import Top from "../sections/home";
 import About from "../sections/about";
 import Experience from "../sections/experience";
-import Books from "../sections/books";
-import Podcasts from "../sections/podcasts";
 import Projects from '../sections/projects';
 import Footer from "../sections/footer";
 import ScrollToTop from "../components/scroll-to-top";
@@ -25,13 +23,11 @@ export default function Home() {
       
       <main>
         <GlobalStyles/>
-        <ThemeProvider theme={dark}>
+        <ThemeProvider theme={light}>
             <Navigation/>
             <Top/>
             <About/>
             <Experience/>
-            <Books/>
-            <Podcasts/>
             <Projects/>
             <Footer/>
             <ScrollToTop/>

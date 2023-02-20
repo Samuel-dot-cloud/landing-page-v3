@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Section = styled.section`
   min-height: 100vh;
@@ -58,4 +59,32 @@ export const SubTextLight = styled.p`
   align-self: flex-start;
   margin: 1rem 0;
   font-weight: 500;
+`;
+
+export const StyledImage = styled(Image)`
+  width: 30vw;
+  height: 60vh;
+  border-radius: 20px;
+  border: 2px solid ${props => props.theme.text};
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+
+  @media (max-width: 64em) {
+    height: 30vh;
+    width: 55vw;
+  }
+
+  @media (max-width: 48em) {
+    height: 25vh;
+    width: 50vw;
+  }
+
+  @media (max-width: 30em) {
+    height: 25vh;
+    width: 40vw;
+  }
 `;

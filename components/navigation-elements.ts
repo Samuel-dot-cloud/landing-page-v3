@@ -15,6 +15,12 @@ export const NavBar = styled.nav`
   height: ${props => props.theme.navHeight};
   margin: 0 auto;
   
+  .desktop {
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+  }
+  
   .mobile {
     display: none;
   }

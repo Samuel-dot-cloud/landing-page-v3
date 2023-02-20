@@ -1,4 +1,31 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import Image from "next/image";
+
+export const StyledImage = styled(Image)`
+  width: 50vw;
+  height: 60vh;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+
+  @media (max-width: 64em) {
+    height: 37vh;
+    width: 70vw;
+  }
+
+  @media (max-width: 48em) {
+    height: 37vh;
+    width: 67vw;
+  }
+
+  @media (max-width: 30em) {
+    height: 40vh;
+    width: 85vw;
+  }
+`;
 
 export const Section = styled.section`
   min-height: 100vh;

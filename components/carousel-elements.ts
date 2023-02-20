@@ -47,21 +47,3 @@ export const Box = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-export const Title = styled.h2`
-  font-size: ${props => props.theme.fontlg};
-  width: 80%;
-  color: ${props => props.theme.text};
-  align-self: flex-start;
-  margin: 1rem auto;
-  font-weight: 400;
-`;
-
-export const Subtitle = styled.p`
-  font-size: ${props => props.theme.fontmd};
-  width: 80%;
-  color: ${props => `rgba(${props.theme.textRgba},0.6)`};
-  align-self: flex-start;
-  margin: 1rem auto;
-  font-weight: 400;
-`;

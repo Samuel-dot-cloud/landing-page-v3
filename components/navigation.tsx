@@ -1,11 +1,20 @@
 import {HamburgerMenu, Menu, MenuItem, NavBar, Section} from "./navigation-elements";
 import Logo from "./logo";
 import Button from "./button";
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
+import Lottie, {LottieRefCurrentProps} from "lottie-react";
+import themeAnimation from "../assets/light-dark.json";
 
 const Navigation = () => {
 
     const [click, setClick] = useState<boolean>(false);
+    const lottieRef = useRef<LottieRefCurrentProps | null>(null);
+    const [mode, setMode] = useState<string>("dark");
+
+    const toggleMode = () => {
+        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+        lottieRef.current?.playSegments(mode === "light" ? [0, 49] : [49, 0], true);
+    };
 
     const scrollTo = (id: string) => {
         let element = document.getElementById(id);
@@ -18,6 +27,19 @@ const Navigation = () => {
 
         setClick(!click);
     }
+
+    useEffect(() => {
+        // 0: light
+        // 45: dark
+        // lottieRef.current?.pause()
+        const frames = lottieRef.current?.getDuration(true);
+        console.log(frames + '-----------------');
+        // lottieRef.current?.goToAndPlay(40, true);
+        // lottieRef.current?.pause();
+        // toggleMode()
+        // lottieRef.current?.playSegments([47, 0], true);
+        lottieRef.current?.goToAndStop(mode === "light" ? 0 : 49, true);
+    }, [])
 
     return (
         <Section id="navigation">
@@ -38,7 +60,10 @@ const Navigation = () => {
                     </MenuItem>
                 </Menu>
                 <div className="desktop">
-                    <Button link="https://samwahome.netlify.app" text="Connect Wallet"/>
+                    {/*// lottieRef.current?.playSegments([0, 47], true);*/}
+                    {/*// lottieRef.current?.pause()*/}
+                    {/*<Button link="https://samwahome.netlify.app" text="Connect Wallet"/>*/}
+                    <Lottie lottieRef={lottieRef} animationData={themeAnimation} loop={false} onClick={toggleMode}/>
                 </div>
             </NavBar>
         </Section>

@@ -1,4 +1,3 @@
-import Button from "../components/button"
 import {BannerButton, ButtonContainer, ImageContainer, Section, Title } from "./banner-elements"
 
 

@@ -1,11 +1,10 @@
-import {Box, Container, Subtitle, Title} from "./carousel-elements";
+import {Box, Container} from "./carousel-elements";
 import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import {Pagination, Navigation, Autoplay, EffectCards} from "swiper";
 import Image from "next/image";
 import {SwiperModule} from "swiper/types";
 
