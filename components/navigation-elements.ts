@@ -15,18 +15,32 @@ export const NavBar = styled.nav`
   height: ${props => props.theme.navHeight};
   margin: 0 auto;
   
-  .desktop {
-    border-radius: 10px;
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
+  }
+  
+  .desktop-1 {
+    width: 60px;
+    height: 60px;
+    padding-right: 1em;
+  }
+
+  .desktop-2 {
     width: 60px;
     height: 60px;
   }
   
   .mobile {
     display: none;
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
   }
   
   @media (max-width: 64em) {
-    .desktop {
+    .row {
       display: none;
     }
     .mobile {
