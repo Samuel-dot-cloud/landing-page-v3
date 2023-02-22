@@ -1,11 +1,5 @@
 import 'styled-components'
 
-// type RGB = `${number}, ${number}, ${number}`;
-// type RGBA = `${number}, ${number}, ${number}, ${number}`;
-// type HEX = `#${string}`;
-//
-// type Color = RGB | RGBA | HEX;
-
 declare module 'styled-components' {
     export interface DefaultTheme {
         body: string;
@@ -22,5 +16,6 @@ declare module 'styled-components' {
         fontxxxl: string;
         fontButton: string;
         navHeight: string;
+        type: string;
     }
 }

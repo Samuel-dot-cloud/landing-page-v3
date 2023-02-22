@@ -5,6 +5,7 @@ export const Section = styled.section`
   width: 100vw;
   position: relative;
   background-color: ${props => props.theme.body};
+  transition: all 0.3s linear;
 `;
 
 export const Container = styled.div`

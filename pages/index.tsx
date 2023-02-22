@@ -1,7 +1,4 @@
 import Head from 'next/head'
-import {GlobalStyles} from "../styles/globals";
-import {ThemeProvider} from "styled-components";
-import {dark, light} from "../styles/themes";
 import Navigation from "../components/navigation";
 import Top from "../sections/home";
 import About from "../sections/about";
@@ -22,8 +19,6 @@ export default function Home() {
       </Head>
       
       <main>
-        <GlobalStyles/>
-        <ThemeProvider theme={light}>
             <Navigation/>
             <Top/>
             <About/>
@@ -31,7 +26,6 @@ export default function Home() {
             <Projects/>
             <Footer/>
             <ScrollToTop/>
-        </ThemeProvider>
       </main>
     </>
   )

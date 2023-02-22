@@ -5,6 +5,7 @@ export const Section = styled.section`
   min-height: 100vh;
   width: 100%;
   background-color: ${props => props.theme.body};
+  transition: all 0.3s linear;
   display: flex;
   justify-content: center;
   align-items: center;

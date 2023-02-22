@@ -5,6 +5,7 @@ export const Section = styled.section`
   height: 100vh;
   width: 100vw;
   background-color: ${props => props.theme.body};
+  transition: all 0.3s linear;
   position: relative;
   color: ${props => props.theme.text};
 

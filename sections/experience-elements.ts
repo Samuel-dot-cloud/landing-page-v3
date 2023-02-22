@@ -4,10 +4,7 @@ export const Section = styled.section`
   min-height: 100vh;
   width: 80%;
   background-color: ${props => props.theme.body};
-  //display: flex;
-  //justify-content: center;
-  //align-items: center;
-  //position: relative;
+  transition: all 0.3s linear;
   height: 100%;
   display: flex;
   flex-direction: column;

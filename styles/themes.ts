@@ -20,6 +20,8 @@ export const light: DefaultTheme = {
     fontButton: '0.875em',
 
     navHeight: '5rem',
+
+    type: 'light',
 }
 
 export const dark: DefaultTheme = {
@@ -42,4 +44,6 @@ export const dark: DefaultTheme = {
     fontButton: '0.875em',
 
     navHeight: '5rem',
+
+    type: 'dark',
 }
