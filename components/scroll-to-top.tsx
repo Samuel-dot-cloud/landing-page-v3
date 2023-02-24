@@ -1,10 +1,16 @@
 import {Up} from "./scroll-to-top-elements";
 import {useLayoutEffect, useRef} from "react";
 import {useWindowScroll} from "react-use";
+import {Howl} from "howler";
 
 const ScrollToTop = () => {
     const ref = useRef<HTMLDivElement>(null);
     const {y} = useWindowScroll();
+
+    const sound = new Howl({
+        src: ['/launch.wav'],
+        rate: 2.0,
+    });
 
     const scrollToTop = () => {
         let element = document.getElementById('navigation');
@@ -14,6 +20,8 @@ const ScrollToTop = () => {
             block: 'start',
             inline: 'nearest'
         });
+
+        sound.play();
 
     }
 

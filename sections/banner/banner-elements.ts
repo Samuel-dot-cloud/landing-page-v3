@@ -21,7 +21,7 @@ export const Section = styled.section`
 `;
 
 export const ImageContainer = styled.div`
-    width: 100%;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,7 +31,7 @@ export const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   opacity: 0.2;
-  
+
   img {
     width: 15rem;
     height: auto;
@@ -46,15 +46,15 @@ export const ImageContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-    font-size: ${props => props.theme.fontxxxl};
+  font-size: ${props => props.theme.fontxxxl};
   color: ${props => props.theme.body};
   padding: 1rem 2rem;
   z-index: 10;
   width: 35%;
   text-transform: capitalize;
-  
+
   text-shadow: 1px 1px 2px ${props => props.theme.text};
-  
+
   @media (max-width: 64em) {
     font-size: ${props => props.theme.fontxxl};
     text-align: center;

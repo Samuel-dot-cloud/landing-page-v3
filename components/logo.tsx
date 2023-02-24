@@ -1,14 +1,12 @@
-import { LogoText } from "./logo-elements"
+import {LogoImage} from "./logo-elements"
 import Link from "next/link";
 
 
 const Logo = () => {
     return (
-        <LogoText>
-            <Link href="/">
-                S.
-            </Link>
-        </LogoText>
+        <Link href="/">
+            <LogoImage src="/logo.png" alt="Logo" width={60} height={60}/>
+        </Link>
     )
 }
 

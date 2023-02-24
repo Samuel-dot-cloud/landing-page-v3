@@ -72,8 +72,20 @@ export const Item = styled.li`
   }
 `;
 
+export const ItemsTitle = styled.li`
+  width: fit-content;
+  font-family: 'Raleway', sans-serif;
+
+  &::after {
+    content: ' ';
+    display: block;
+    height: 2px;
+    background: ${props => props.theme.text};
+  }
+`;
+
 export const Bottom = styled.div`
-    width: 75%;
+  width: 75%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

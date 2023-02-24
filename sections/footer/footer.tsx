@@ -1,11 +1,13 @@
-import Banner from "./banner";
-import {Bottom, Container, IconList, Item, Left, MenuItems, Section} from "./footer-elements";
-import Logo from "../components/logo";
+import Banner from "../banner/banner";
+import {Bottom, Container, IconList, Item, ItemsTitle, Left, MenuItems, Section} from "./footer-elements";
+import Logo from "../../components/logo";
 import Link from "next/link";
 import {Email, GitHub, LinkedIn, Twitter} from "@mui/icons-material";
+import {useRouter} from "next/router";
 
 
 const Footer = () => {
+    const router = useRouter()
 
     const scrollTo = (id: string) => {
         let element = document.getElementById(id);
@@ -41,13 +43,16 @@ const Footer = () => {
                     </IconList>
                 </Left>
                 <MenuItems>
+                    <ItemsTitle>Sections</ItemsTitle>
+                    <ItemsTitle>Info Diet</ItemsTitle>
                     <Item onClick={() => scrollTo('home')}>Home</Item>
+                    <Item onClick={() => router.push('/books')}>Books</Item>
                     <Item onClick={() => scrollTo('about')}>About</Item>
+                    <Item onClick={() => router.push('/podcasts')}>Podcasts</Item>
                     <Item onClick={() => scrollTo('experience')}>Experience</Item>
 
+                    <Item onClick={() => router.push('/newsletters')}>Newsletters</Item>
                     <Item onClick={() => scrollTo('projects')}>Projects</Item>
-                    <Item>Home</Item>
-                    <Item>Home</Item>
                 </MenuItems>
             </Container>
             <Bottom>

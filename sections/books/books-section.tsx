@@ -1,4 +1,4 @@
-import Carousel, {CarouselItem} from "../components/carousel";
+import Carousel, {CarouselItem} from "../../components/carousel";
 import {Autoplay, EffectCards, Navigation, Pagination} from "swiper";
 import {Box, Container, Section, SubText, SubTextLight, Title } from "./books-section-elements";
 
@@ -10,6 +10,18 @@ const bookItems: CarouselItem[] = [
     {
         id: 2,
         image: "/books/react-cookbook.jpeg",
+    },
+    {
+        id: 3,
+        image: "/books/ego.jpeg",
+    },
+    {
+        id: 4,
+        image: "/books/almanack.png",
+    },
+    {
+        id: 5,
+        image: "/books/atomic.jpeg",
     },
 ];
 
@@ -25,7 +37,7 @@ const BooksSection = () => {
                         Books
                     </Title>
                     <SubText>
-                        Here are some cool books that I&apos;ve found and read.
+                        Here are some cool books covering various topics that I&apos;ve found and read.
                     </SubText>
                     <SubTextLight>
                         “Knowledge is power” – Francis Bacon

@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 
 import Image from "next/image";
 import {SwiperModule} from "swiper/types";
+import {Howl} from "howler";
 
 
 export interface CarouselItem {
@@ -15,6 +16,12 @@ export interface CarouselItem {
 }
 
 const Carousel = ({modules, items}: { modules: SwiperModule[], items: CarouselItem[] }) => {
+
+    const sound = new Howl({
+        src: ['/turn.mp3'],
+        rate: 1.5,
+    });
+
     return (
         <Container>
             <Swiper
@@ -28,6 +35,8 @@ const Carousel = ({modules, items}: { modules: SwiperModule[], items: CarouselIt
                 scrollbar={{
                     draggable: true
                 }}
+                onSlideChange={() => sound.play()}
+                // onSwiper={() => sound.play()}
                 navigation={false}
                 effect={"cards"}
                 grabCursor={true}

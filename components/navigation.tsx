@@ -8,7 +8,7 @@ import volumeAnimation from "../assets/volume-on-off.json";
 import {useTheme} from "./use-theme";
 import {light} from "../styles/themes";
 
-const Navigation = () => {
+const Navigation = ({isGlobal}: { isGlobal: boolean }) => {
     const {theme, isSoundOn, toggleTheme, toggleMode} = useTheme();
 
     const [click, setClick] = useState<boolean>(false);
@@ -49,7 +49,7 @@ const Navigation = () => {
     }, [theme.type]);
 
     useEffect(() => {
-        isSoundOn ? sound3.play() : sound4.play();
+        isSoundOn ? sound4.play() : null;
         lottieVolumeRef.current?.playSegments(isSoundOn ? [60, 0] : [0, 60], true);
     }, [isSoundOn]);
 
@@ -62,27 +62,17 @@ const Navigation = () => {
         <Section id="navigation">
             <NavBar>
                 <Logo/>
-                <HamburgerMenu click={click} onClick={() => setClick(!click)}>
-                    &nbsp;
-                </HamburgerMenu>
-                <Menu click={click}>
-                    <MenuItem onClick={() => scrollTo('home')}>Home</MenuItem>
-                    <MenuItem onClick={() => scrollTo('about')}>About</MenuItem>
-                    <MenuItem onClick={() => scrollTo('experience')}>Experience</MenuItem>
-                    <MenuItem onClick={() => scrollTo('projects')}>Projects</MenuItem>
-                    <MenuItem>
-                        <div className="mobile">
-                            <Lottie lottieRef={lottieThemeRef} animationData={themeAnimation} loop={false}
-                                    onClick={toggleTheme}/>
-                        </div>
-                    </MenuItem>
-                    <MenuItem>
-                        <div className="mobile">
-                            <Lottie lottieRef={lottieVolumeRef} animationData={volumeAnimation} loop={false}
-                                    onClick={toggleMode}/>
-                        </div>
-                    </MenuItem>
-                </Menu>
+                {!isGlobal ? <div>
+                    <HamburgerMenu click={click} onClick={() => setClick(!click)}>
+                        &nbsp;
+                    </HamburgerMenu>
+                    <Menu click={click}>
+                        <MenuItem onClick={() => scrollTo('home')}>Home</MenuItem>
+                        <MenuItem onClick={() => scrollTo('about')}>About</MenuItem>
+                        <MenuItem onClick={() => scrollTo('experience')}>Experience</MenuItem>
+                        <MenuItem onClick={() => scrollTo('projects')}>Projects</MenuItem>
+                    </Menu>
+                </div> : null}
                 <div className="row">
                     <div className="desktop-1">
                         <Lottie lottieRef={lottieThemeRef} animationData={themeAnimation} loop={false}

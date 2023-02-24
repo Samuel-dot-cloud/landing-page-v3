@@ -1,4 +1,4 @@
-import Carousel, {CarouselItem} from "../components/carousel";
+import Carousel, {CarouselItem} from "../../components/carousel";
 import {Autoplay, EffectCards, Navigation, Pagination} from "swiper";
 import {Box, Container, Section, SubText, SubTextLight, Title } from "./podcasts-section-elements";
 

@@ -15,7 +15,7 @@ const Banner = () => {
             <Title>Let&apos;s connect.</Title>
             <ButtonContainer>
                 <BannerButton>
-                    Download CV
+                    Download Resume
                 </BannerButton>
             </ButtonContainer>
         </Section>

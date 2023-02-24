@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Section = styled.section`
   width: 100vw;
   background-color: ${props => props.theme.body};
+  transition: all 0.3s ease;
 `;
 
 export const NavBar = styled.nav`
@@ -11,7 +12,7 @@ export const NavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
 
-  width: 85%;
+  width: 87%;
   height: ${props => props.theme.navHeight};
   margin: 0 auto;
   
@@ -19,6 +20,7 @@ export const NavBar = styled.nav`
     display: flex;
     justify-content: space-evenly;
     align-self: center;
+    margin-bottom: 0.5em;
   }
   
   .desktop-1 {
@@ -39,14 +41,14 @@ export const NavBar = styled.nav`
     height: 60px;
   }
   
-  @media (max-width: 64em) {
-    .row {
-      display: none;
-    }
-    .mobile {
-      display: inline-block;
-    }
-  }
+  //@media (max-width: 64em) {
+  //  .row {
+  //    display: none;
+  //  }
+  //  .mobile {
+  //    display: inline-block;
+  //  }
+  //}
 `;
 
 export const Menu = styled.ul<{click: boolean}>`
@@ -65,10 +67,10 @@ export const Menu = styled.ul<{click: boolean}>`
     height: ${props => `calc(100vh - ${props.theme.navHeight})`};
     z-index: 50;
     background-color: ${props => `rgba(${props.theme.bodyRgba},0.85)`};
+    transition: all 0.3s linear;
     backdrop-filter: blur(2px);
 
     transform: ${props => props.click ? `translateY(0)` : `translateY(1000%)`};
-    transition: all 0.3s ease;
     flex-direction: column;
     justify-content: center;
   }
