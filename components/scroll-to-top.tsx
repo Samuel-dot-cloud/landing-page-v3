@@ -1,6 +1,6 @@
 import {Up} from "./scroll-to-top-elements";
-import {useLayoutEffect, useRef} from "react";
-import {useWindowScroll} from "react-use";
+import {useRef} from "react";
+import {useIsomorphicLayoutEffect, useWindowScroll} from "react-use";
 import {Howl} from "howler";
 
 const ScrollToTop = () => {
@@ -25,7 +25,7 @@ const ScrollToTop = () => {
 
     }
 
-    useLayoutEffect(() => {
+    useIsomorphicLayoutEffect(() => {
         if(y > 200) {
             ref!.current!.style.display = "flex"
         } else {

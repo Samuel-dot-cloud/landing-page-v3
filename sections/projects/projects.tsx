@@ -1,17 +1,18 @@
 import {Box, Container, Section, SubText, SubTextLight, Title} from "./projects-elements";
 import Image from "next/image";
 import Link from "next/link";
-import {useLayoutEffect, useRef} from "react";
+import {useRef} from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import {StyledImage} from "./projects-elements";
 import {Avatar, Chip, Stack} from "@mui/material";
+import {useIsomorphicLayoutEffect} from "react-use";
 
 const Projects = () => {
     const ref = useRef(null);
     gsap.registerPlugin(ScrollTrigger);
 
-    useLayoutEffect(() => {
+    useIsomorphicLayoutEffect(() => {
         let element = ref.current;
 
         ScrollTrigger.create({
