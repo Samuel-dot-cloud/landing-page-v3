@@ -7,6 +7,7 @@ import themeAnimation from "../assets/light-dark.json";
 import volumeAnimation from "../assets/volume-on-off.json";
 import {useTheme} from "./use-theme";
 import {light} from "../styles/themes";
+import {Tooltip} from "@mui/material";
 
 const Navigation = ({isGlobal}: { isGlobal: boolean }) => {
     const {theme, isSoundOn, toggleTheme, toggleMode} = useTheme();
@@ -74,14 +75,18 @@ const Navigation = ({isGlobal}: { isGlobal: boolean }) => {
                     </Menu>
                 </div> : null}
                 <div className="row">
-                    <div className="desktop-1">
-                        <Lottie lottieRef={lottieThemeRef} animationData={themeAnimation} loop={false}
-                                onClick={toggleTheme}/>
-                    </div>
-                    <div className="desktop-2">
-                        <Lottie lottieRef={lottieVolumeRef} animationData={volumeAnimation} loop={false}
-                                onClick={toggleMode}/>
-                    </div>
+                    <Tooltip title={theme.type === "light" ? "Switch to dark mode" : "Switch to light mode"}>
+                        <div className="desktop-1">
+                            <Lottie lottieRef={lottieThemeRef} animationData={themeAnimation} loop={false}
+                                    onClick={toggleTheme}/>
+                        </div>
+                    </Tooltip>
+                    <Tooltip title={isSoundOn ? "Mute sounds" : "Unmute sounds"}>
+                        <div className="desktop-2">
+                            <Lottie lottieRef={lottieVolumeRef} animationData={volumeAnimation} loop={false}
+                                    onClick={toggleMode}/>
+                        </div>
+                    </Tooltip>
                 </div>
             </NavBar>
         </Section>

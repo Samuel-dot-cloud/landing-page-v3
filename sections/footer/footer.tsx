@@ -37,7 +37,7 @@ const Footer = () => {
                         <Link href="https://twitter.com/samuelwahome_" target="_blank" rel="noopener">
                             <Twitter/>
                         </Link>
-                        <Link href="mailto:samuelwahome.k5@gmail.com" target="_blank" rel="noopener">
+                        <Link href="mailto:hey@samwahome.com" target="_blank" rel="noopener">
                             <Email/>
                         </Link>
                     </IconList>

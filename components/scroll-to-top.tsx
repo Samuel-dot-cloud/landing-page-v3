@@ -2,6 +2,7 @@ import {Up} from "./scroll-to-top-elements";
 import {useRef} from "react";
 import {useIsomorphicLayoutEffect, useWindowScroll} from "react-use";
 import {Howl} from "howler";
+import {Tooltip} from "@mui/material";
 
 const ScrollToTop = () => {
     const ref = useRef<HTMLDivElement>(null);
@@ -26,7 +27,7 @@ const ScrollToTop = () => {
     }
 
     useIsomorphicLayoutEffect(() => {
-        if(y > 200) {
+        if (y > 200) {
             ref!.current!.style.display = "flex"
         } else {
             ref!.current!.style.display = "none"
@@ -35,9 +36,11 @@ const ScrollToTop = () => {
     }, [y])
 
     return (
-        <Up ref={ref} onClick={() => scrollToTop()}>
-            &#x2191;
-        </Up>
+        <Tooltip title="Scroll to top">
+            <Up ref={ref} onClick={() => scrollToTop()}>
+                &#x2191;
+            </Up>
+        </Tooltip>
     );
 }
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 export const Section = styled.section`
   width: 110vw;
@@ -79,7 +80,7 @@ export const ButtonContainer = styled.div`
   
 `;
 
-export const BannerButton = styled.button`
+export const BannerButton = styled(Link)`
   display: inline-block;
   background-color: ${props => props.theme.body};
   color: ${props => props.theme.text};
