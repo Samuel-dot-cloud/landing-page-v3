@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {FiMoon, FiSun, FiVolume2, FiVolumeX} from "react-icons/fi";
 
 
 export const Section = styled.section`
@@ -8,47 +9,65 @@ export const Section = styled.section`
 `;
 
 export const NavBar = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 87%;
-  height: ${props => props.theme.navHeight};
-  margin: 0 auto;
-  
-  .row {
     display: flex;
-    justify-content: space-evenly;
-    align-self: center;
-    margin-bottom: 0.5em;
-  }
-  
-  .desktop-1 {
-    width: 60px;
-    height: 60px;
-    padding-right: 1em;
-  }
+    justify-content: space-between;
+    align-items: center;
 
-  .desktop-2 {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .mobile {
-    display: none;
-    border-radius: 10px;
-    width: 60px;
-    height: 60px;
-  }
-  
-  //@media (max-width: 64em) {
-  //  .row {
-  //    display: none;
-  //  }
-  //  .mobile {
-  //    display: inline-block;
-  //  }
-  //}
+    width: 87%;
+    height: ${props => props.theme.navHeight};
+    margin: 0 auto;
+
+    .row {
+        display: flex;
+        justify-content: space-evenly;
+        align-self: center;
+        margin-bottom: 0.5em;
+    }
+
+    .desktop-1 {
+        width: 60px;
+        height: 60px;
+        padding-left: 1em;
+        padding-top: 2em;
+    }
+
+    .desktop-2 {
+        width: 60px;
+        height: 60px;
+        padding-top: 2em;
+    }
+
+    .mobile {
+        display: none;
+        border-radius: 10px;
+        width: 60px;
+        height: 60px;
+    }
+
+    //@media (max-width: 64em) {
+    //  .row {
+    //    display: none;
+    //  }
+    //  .mobile {
+    //    display: inline-block;
+    //  }
+    //}
+`;
+
+export const MoonIcon = styled(FiMoon)`
+    color: ${props => props.theme.text};
+`;
+
+export const SunIcon = styled(FiSun)`
+    color: ${props => props.theme.text};
+`;
+
+export const Volume2Icon = styled(FiVolume2)`
+    color: ${props => props.theme.text};
+`;
+
+export const VolumeXIcon = styled(FiVolumeX)`
+    color: ${props => props.theme.text};
 `;
 
 export const Menu = styled.ul<{click: boolean}>`

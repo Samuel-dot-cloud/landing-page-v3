@@ -1,12 +1,19 @@
-import {HamburgerMenu, Menu, MenuItem, NavBar, Section} from "./navigation-elements";
+import {
+    HamburgerMenu,
+    Menu,
+    MenuItem,
+    MoonIcon,
+    NavBar,
+    Section,
+    SunIcon,
+    Volume2Icon,
+    VolumeXIcon
+} from "./navigation-elements";
 import Logo from "./logo";
 import {Howl} from 'howler';
 import {useEffect, useRef, useState} from "react";
-import Lottie, {LottieRefCurrentProps} from "lottie-react";
-import themeAnimation from "../assets/light-dark.json";
-import volumeAnimation from "../assets/volume-on-off.json";
+import {LottieRefCurrentProps} from "lottie-react";
 import {useTheme} from "./use-theme";
-import {light} from "../styles/themes";
 import {Tooltip} from "@mui/material";
 
 const Navigation = ({isGlobal}: { isGlobal: boolean }) => {
@@ -76,15 +83,13 @@ const Navigation = ({isGlobal}: { isGlobal: boolean }) => {
                 </div> : null}
                 <div className="row">
                     <Tooltip title={theme.type === "light" ? "Switch to dark mode" : "Switch to light mode"}>
-                        <div className="desktop-1">
-                            <Lottie lottieRef={lottieThemeRef} animationData={themeAnimation} loop={false}
-                                    onClick={toggleTheme}/>
+                        <div className="desktop-1" onClick={toggleTheme} style={{ cursor: "pointer"}}>
+                            {theme.type === "light" ? <MoonIcon size={24} /> : <SunIcon size={24} />}
                         </div>
                     </Tooltip>
                     <Tooltip title={isSoundOn ? "Mute sounds" : "Unmute sounds"}>
-                        <div className="desktop-2">
-                            <Lottie lottieRef={lottieVolumeRef} animationData={volumeAnimation} loop={false}
-                                    onClick={toggleMode}/>
+                        <div className="desktop-2" onClick={toggleMode} style={{cursor: "pointer"}}>
+                            {isSoundOn ? <Volume2Icon size={24} /> : <VolumeXIcon size={24} />}
                         </div>
                     </Tooltip>
                 </div>
