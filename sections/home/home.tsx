@@ -14,7 +14,7 @@ const Top = () => {
                     </Title>
 
                     <Subtitle>
-                        I&apos;m a software developer building both web and mobile app applications.
+                        I&apos;m a software developer building both web and mobile applications.
                     </Subtitle>
 
                     <Subtitle>

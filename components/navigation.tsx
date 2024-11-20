@@ -1,20 +1,24 @@
-import {HamburgerMenu, Menu, MenuItem, NavBar, Section} from "./navigation-elements";
+import {
+    HamburgerMenu,
+    Menu,
+    MenuItem,
+    MoonIcon,
+    NavBar,
+    Section,
+    SunIcon,
+    Volume2Icon,
+    VolumeXIcon
+} from "./navigation-elements";
 import Logo from "./logo";
 import {Howl} from 'howler';
-import {useEffect, useRef, useState} from "react";
-import Lottie, {LottieRefCurrentProps} from "lottie-react";
-import themeAnimation from "../assets/light-dark.json";
-import volumeAnimation from "../assets/volume-on-off.json";
+import {useEffect, useState} from "react";
 import {useTheme} from "./use-theme";
-import {light} from "../styles/themes";
-import {Tooltip} from "@mui/material";
+import {Tooltip} from "antd";
 
 const Navigation = ({isGlobal}: { isGlobal: boolean }) => {
     const {theme, isSoundOn, toggleTheme, toggleMode} = useTheme();
 
     const [click, setClick] = useState<boolean>(false);
-    const lottieThemeRef = useRef<LottieRefCurrentProps | null>(null);
-    const lottieVolumeRef = useRef<LottieRefCurrentProps | null>(null);
 
     const sound1 = new Howl({
         src: ['/lights-on.wav']
@@ -43,22 +47,11 @@ const Navigation = ({isGlobal}: { isGlobal: boolean }) => {
 
     useEffect(() => {
         theme.type === "light" ? sound2.play() : sound1.play();
-        lottieThemeRef.current?.playSegments(
-            theme.type === "light" ? [0, 49] : [49, 0],
-            true
-        );
     }, [theme.type]);
 
     useEffect(() => {
         isSoundOn ? sound4.play() : null;
-        lottieVolumeRef.current?.playSegments(isSoundOn ? [60, 0] : [0, 60], true);
     }, [isSoundOn]);
-
-    useEffect(() => {
-        lottieThemeRef.current?.goToAndStop(theme.type === "light" ? 0 : 49, true);
-        lottieVolumeRef.current?.goToAndStop(!isSoundOn ? 60 : 0, true);
-    }, [])
-
     return (
         <Section id="navigation">
             <NavBar>
@@ -76,15 +69,13 @@ const Navigation = ({isGlobal}: { isGlobal: boolean }) => {
                 </div> : null}
                 <div className="row">
                     <Tooltip title={theme.type === "light" ? "Switch to dark mode" : "Switch to light mode"}>
-                        <div className="desktop-1">
-                            <Lottie lottieRef={lottieThemeRef} animationData={themeAnimation} loop={false}
-                                    onClick={toggleTheme}/>
+                        <div className="desktop-1" onClick={toggleTheme} style={{cursor: "pointer"}}>
+                            {theme.type === "light" ? <MoonIcon size={24}/> : <SunIcon size={24}/>}
                         </div>
                     </Tooltip>
                     <Tooltip title={isSoundOn ? "Mute sounds" : "Unmute sounds"}>
-                        <div className="desktop-2">
-                            <Lottie lottieRef={lottieVolumeRef} animationData={volumeAnimation} loop={false}
-                                    onClick={toggleMode}/>
+                        <div className="desktop-2" onClick={toggleMode} style={{cursor: "pointer"}}>
+                            {isSoundOn ? <Volume2Icon size={24}/> : <VolumeXIcon size={24}/>}
                         </div>
                     </Tooltip>
                 </div>
