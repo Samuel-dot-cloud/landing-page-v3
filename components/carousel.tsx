@@ -1,80 +1,79 @@
-import {Box, Container} from "./carousel-elements";
-import {Swiper, SwiperSlide} from "swiper/react";
+import { Box, Container } from "./carousel-elements";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import Image from "next/image";
-import {SwiperModule} from "swiper/types";
-import {Howl} from "howler";
-
+import { SwiperModule } from "swiper/types";
+import { Howl } from "howler";
 
 export interface CarouselItem {
-    id: number;
-    image: string;
+  id: number;
+  image: string;
 }
 
-const Carousel = ({modules, items}: { modules: SwiperModule[], items: CarouselItem[] }) => {
+const Carousel = ({
+  modules,
+  items,
+}: {
+  modules: SwiperModule[];
+  items: CarouselItem[];
+}) => {
+  const sound = new Howl({
+    src: ["/turn.mp3"],
+    rate: 1.5,
+  });
 
-    const sound = new Howl({
-        src: ['/turn.mp3'],
-        rate: 1.5,
-    });
+  let isManualTurn = false;
 
-    let isManualTurn = false;
+  return (
+    <Container>
+      <Swiper
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          type: "fraction",
+        }}
+        scrollbar={{
+          draggable: true,
+        }}
+        onTransitionStart={() => {
+          if (isManualTurn) {
+            sound.play();
+            isManualTurn = false;
+          }
+        }}
+        onTouchStart={() => {
+          isManualTurn = true;
+        }}
+        onSlideChangeTransitionStart={(swiper) => {
+          if (swiper.autoplay.running) {
+            isManualTurn = false;
+          }
+        }}
+        onClick={() => {
+          isManualTurn = true;
+        }}
+        navigation={false}
+        effect={"cards"}
+        grabCursor={true}
+        modules={modules}
+        className="mySwiper"
+      >
+        {items.map((item) => (
+          <SwiperSlide key={item.id}>
+            <Box>
+              <Image height={180} width={180} src={item.image} alt="" />
+            </Box>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Container>
+  );
+};
 
-    return (
-        <Container>
-            <Swiper
-                autoplay={{
-                    delay: 2000,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    type: 'fraction'
-                }}
-                scrollbar={{
-                    draggable: true
-                }}
-                onTransitionStart={() => {
-                    if (isManualTurn) {
-                        sound.play();
-                        isManualTurn = false;
-                    }
-                }}
-                onTouchStart={() => {
-                    isManualTurn = true;
-                }}
-                onSlideChangeTransitionStart={(swiper) => {
-                    if (swiper.autoplay.running) {
-                        isManualTurn = false;
-                    }
-                }}
-                onClick={() => {
-                    isManualTurn = true;
-                }}
-                navigation={false}
-                effect={"cards"}
-                grabCursor={true}
-                modules={modules}
-                className="mySwiper"
-            >
-                {items.map(item =>
-                    <SwiperSlide key={item.id}>
-                        <Box>
-                            <Image
-                                height={180}
-                                width={180}
-                                src={item.image}
-                                alt=""
-                            />
-                        </Box>
-                    </SwiperSlide>
-                )}
-            </Swiper>
-        </Container>
-    );
-}
-
-export default Carousel
+export default Carousel;
