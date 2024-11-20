@@ -22,6 +22,8 @@ const Carousel = ({modules, items}: { modules: SwiperModule[], items: CarouselIt
         rate: 1.5,
     });
 
+    let isManualTurn = false;
+
     return (
         <Container>
             <Swiper
@@ -35,8 +37,23 @@ const Carousel = ({modules, items}: { modules: SwiperModule[], items: CarouselIt
                 scrollbar={{
                     draggable: true
                 }}
-                onSlideChange={() => sound.play()}
-                // onSwiper={() => sound.play()}
+                onTransitionStart={() => {
+                    if (isManualTurn) {
+                        sound.play();
+                        isManualTurn = false;
+                    }
+                }}
+                onTouchStart={() => {
+                    isManualTurn = true;
+                }}
+                onSlideChangeTransitionStart={(swiper) => {
+                    if (swiper.autoplay.running) {
+                        isManualTurn = false;
+                    }
+                }}
+                onClick={() => {
+                    isManualTurn = true;
+                }}
                 navigation={false}
                 effect={"cards"}
                 grabCursor={true}
@@ -46,8 +63,12 @@ const Carousel = ({modules, items}: { modules: SwiperModule[], items: CarouselIt
                 {items.map(item =>
                     <SwiperSlide key={item.id}>
                         <Box>
-                            <Image height={180} width={180} src={item.image}
-                                   alt=""/>
+                            <Image
+                                height={180}
+                                width={180}
+                                src={item.image}
+                                alt=""
+                            />
                         </Box>
                     </SwiperSlide>
                 )}
