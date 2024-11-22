@@ -21,7 +21,7 @@ const Top = () => {
           </Subtitle>
 
           <Subtitle>
-            When I&apos;m not deep in code, you&apos;ll probably find me reading
+            When not deep in code, you&apos;ll probably find me reading
             something thought-provoking, discovering new music, or enjoying a
             long bike ride.
           </Subtitle>
