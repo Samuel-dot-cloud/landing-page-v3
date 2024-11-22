@@ -9,7 +9,6 @@ import {
   Volume2Icon,
   VolumeXIcon,
 } from "./navigation-elements";
-import Logo from "./logo";
 import { Howl } from "howler";
 import { useRef, useState } from "react";
 import { useTheme } from "./use-theme";
@@ -77,14 +76,13 @@ const Navigation = ({ isGlobal }: { isGlobal: boolean }) => {
   return (
     <Section id="navigation">
       <NavBar>
-        <Logo />
         {!isGlobal ? (
-          <div>
+          <div className="menu-container">
             <HamburgerMenu click={click} onClick={() => setClick(!click)}>
               &nbsp;
             </HamburgerMenu>
             <Menu click={click}>
-              <MenuItem onClick={() => scrollTo("home")}>Home</MenuItem>
+              {/*<MenuItem onClick={() => scrollTo("home")}>Home</MenuItem>*/}
               <MenuItem onClick={() => scrollTo("about")}>About</MenuItem>
               <MenuItem onClick={() => scrollTo("experience")}>
                 Experience
@@ -93,7 +91,7 @@ const Navigation = ({ isGlobal }: { isGlobal: boolean }) => {
             </Menu>
           </div>
         ) : null}
-        <div className="row">
+        <div className="icons-container">
           <Tooltip
             title={
               theme.type === "light"

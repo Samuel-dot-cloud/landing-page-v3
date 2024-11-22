@@ -4,7 +4,7 @@ import Image from "next/image";
 export const Section = styled.section`
   min-height: 100vh;
   width: 100%;
-  background-color: ${props => props.theme.body};
+  background-color: ${(props) => props.theme.body};
   transition: all 0.3s linear;
   display: flex;
   justify-content: center;
@@ -20,16 +20,16 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   @media (max-width: 70em) {
     width: 85%;
   }
-  
+
   @media (max-width: 64em) {
     width: 100%;
     flex-direction: column;
-    
-    &>*:last-child {
+
+    & > *:last-child {
       width: 80%;
     }
   }
@@ -45,18 +45,18 @@ export const Box = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: ${props => props.theme.fontxxl};
+  font-size: ${(props) => props.theme.fontxxl};
   text-transform: capitalize;
   width: 80%;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   align-self: flex-start;
   margin: 0;
 `;
 
 export const SubTextLight = styled.p`
-  font-size: ${props => props.theme.fontmd};
+  font-size: ${(props) => props.theme.fontmd};
   width: 80%;
-  color: ${props => `rgba(${props.theme.textRgba},0.6)`};
+  color: ${(props) => `rgba(${props.theme.textRgba},0.6)`};
   align-self: flex-start;
   margin: 1rem 0;
   font-weight: 500;
@@ -64,19 +64,18 @@ export const SubTextLight = styled.p`
 
 export const StyledImage = styled(Image)`
   width: 30vw;
-  height: 60vh;
+  height: 50vh;
   border-radius: 20px;
-  border: 2px solid ${props => props.theme.text};
+  border: 2px solid ${(props) => props.theme.text};
   transition: all 0.2s ease;
 
   &:hover {
     transform: scale(1.1);
   }
-  
 
   @media (max-width: 64em) {
     height: 30vh;
-    width: 55vw;
+    width: 50vw;
   }
 
   @media (max-width: 48em) {
@@ -86,6 +85,6 @@ export const StyledImage = styled(Image)`
 
   @media (max-width: 30em) {
     height: 25vh;
-    width: 40vw;
+    width: 50vw;
   }
 `;
