@@ -1,107 +1,98 @@
-import * as React from 'react';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import {LargeTitle, Section, SubText, SubTextLight, Title} from "./experience-elements";
-import {Tabs, useMediaQuery} from '@mui/material';
+import {
+  DetailItem,
+  ExperienceContainer,
+  LargeTitle,
+  Section,
+  StyledTabs,
+  SubTextLight,
+  TabContent,
+  Title,
+} from "./experience-elements";
+import { useEffect, useState } from "react";
+import { Tabs } from "antd";
 
-interface TabPanelProps {
-    details: string[];
-    position: string;
-    timePeriod: string;
-    index: number;
-    value: number;
+const { TabPane } = Tabs;
+
+interface ExperienceItem {
+  position: string;
+  timePeriod: string;
+  details: string[];
 }
 
-function TabPanel(props: TabPanelProps) {
-    const {position, timePeriod, details, value, index, ...other} = props;
-    const isSmall = useMediaQuery('(max-width: 48em)');
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{p: 3, m: 5, width: isSmall ? 150 : 500, height: '100%'}}>
-                    <Title>
-                        {position}
-                    </Title>
-                    <SubText>
-                        {timePeriod}
-                    </SubText>
-                    {details.map((detail, detailIndex) =>
-                        <SubTextLight key={`${index}-${detailIndex}`}>
-                            {detail}
-                        </SubTextLight>
-                    )}
-                </Box>
-            )}
-        </div>
-    );
-}
-
-function a11yProps(index: number) {
-    return {
-        id: `vertical-tab-${index}`,
-        'aria-controls': `vertical-tabpanel-${index}`,
-    };
-}
-
+const experienceData: ExperienceItem[] = [
+  {
+    position: "Software Engineer @Kino AI",
+    timePeriod: "Jan 2023 - Present",
+    details: [
+      "Write modern and maintainable code for an AI powered video processing web-based platform.",
+      "Work with a variety of different languages, platforms and frameworks such as React and Typescript.",
+      "Communicate with a multi-disciplinary team of engineers on a daily basis.",
+    ],
+  },
+  {
+    position: "Software Engineer @Senseg",
+    timePeriod: "Jan 2022 - Dec 2022",
+    details: [
+      "Built up the Senseg V1 app from the ground up using Flutter with Dart in order to leverage Android and iOS within a single codebase.",
+      "Built the Senseg V2 public-facing website using React, which served as a reference point for users looking to learn more about the service.",
+      "Built RESTful APIs using NodeJS to verify phone numbers during sign-up on mobile, and also power the merchant charge experience on the web.",
+      "Developed internal tooling with NodeJS and React for processing transaction requests.",
+      "Conducted tests, reviewed, and contributed to the Senseg V2 app.",
+    ],
+  },
+];
 
 const Experience = () => {
-    const [value, setValue] = React.useState(0);
-    const isSmall = useMediaQuery('(max-width: 48em)');
+  const [activeTab, setActiveTab] = useState<string>("0");
+  const [tabPosition, setTabPosition] = useState<"top" | "left">("top");
 
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
+  useEffect(() => {
+    const updateTabPosition = () => {
+      setTabPosition(window.innerWidth > 768 ? "left" : "top");
     };
+    updateTabPosition();
+    window.addEventListener("resize", updateTabPosition);
 
-    return (
-        <Section id="experience">
-            <LargeTitle>
-                Experience
-            </LargeTitle>
-            <Box
-                sx={{flexGrow: 1, display: isSmall ? '' : 'flex', mt: 2}}
+    return () => {
+      window.removeEventListener("resize", updateTabPosition);
+    };
+  }, []);
+
+  const handleChange = (key: string) => {
+    setActiveTab(key);
+  };
+
+  return (
+    <Section id="experience">
+      <LargeTitle>Experience</LargeTitle>
+      <ExperienceContainer>
+        <StyledTabs
+          activeKey={activeTab}
+          onChange={handleChange}
+          tabPosition={tabPosition}
+        >
+          {experienceData.map((experience, index) => (
+            <TabPane
+              tab={
+                <SubTextLight>{experience.position.split("@")[1]}</SubTextLight>
+              }
+              key={index.toString()}
             >
-                <Tabs
-                    orientation={isSmall ? "horizontal": "vertical"}
-                    value={value}
-                    variant="standard"
-                    onChange={handleChange}
-                    textColor="primary"
-                    indicatorColor="primary"
-                    aria-label="Vertical tabs example"
-                    sx={{borderRight: 1, borderColor: 'divider'}}
-                    centered={true}>
-                    <Tab label={<SubTextLight>Kino AI</SubTextLight>} {...a11yProps(0)} />
-                    <Tab label={<SubTextLight>Senseg</SubTextLight>} {...a11yProps(1)} />
-                </Tabs>
-                <TabPanel
-                    value={value}
-                    index={0}
-                    details={['- Write modern and maintainable code for an AI powered video processing web-based platform.',
-                        '- Work with a variety of different languages, platforms and frameworks such as NextJS, Typescript and Prisma',
-                        '- Communicate with a multi-disciplinary team of engineers and managers on a daily basis']}
-                    position="Software Engineer @Kino AI"
-                    timePeriod="Jan 2023 - Present"/>
-                <TabPanel
-                    value={value}
-                    index={1}
-                    details={['- Built up the Senseg V1 app from the ground up using Flutter with Dart in order to leverage the power of Android and iOS while utilizing only one codebase.',
-                        '- Built up the Senseg V2 public-facing website using React and Material UI, which would serve as a point of reference for users looking to learn more about the service.',
-                        '- Built RESTful APIs using NodeJS to verify phone numbers during sign-up on mobile, and also power the merchant charge experience on the web.',
-                        '- Built internal tools using NodeJS and React to process and approve/deny transaction requests.',
-                        '- Conducted tests, reviewed, and contributed code for the Senseg V2 app.']}
-                    position="Software Engineer @Senseg"
-                    timePeriod="Jan 2022 - Dec 2022"/>
-            </Box>
-        </Section>
-    );
-
-}
+              <TabContent>
+                <Title>{experience.position}</Title>
+                <SubTextLight>{experience.timePeriod}</SubTextLight>
+                <ul>
+                  {experience.details.map((detail, detailIndex) => (
+                    <DetailItem key={detailIndex}>{detail}</DetailItem>
+                  ))}
+                </ul>
+              </TabContent>
+            </TabPane>
+          ))}
+        </StyledTabs>
+      </ExperienceContainer>
+    </Section>
+  );
+};
 
 export default Experience;
