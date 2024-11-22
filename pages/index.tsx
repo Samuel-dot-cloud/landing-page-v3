@@ -11,7 +11,7 @@ export default function Home() {
     <main>
       <Navigation isGlobal={false} />
       <Top />
-      <About />
+      {/*<About />*/}
       <Experience />
       <Projects />
       <Footer />

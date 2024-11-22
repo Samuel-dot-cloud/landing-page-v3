@@ -82,7 +82,7 @@ const Navigation = ({ isGlobal }: { isGlobal: boolean }) => {
               &nbsp;
             </HamburgerMenu>
             <Menu click={click}>
-              <MenuItem onClick={() => scrollTo("home")}>Home</MenuItem>
+              {/*<MenuItem onClick={() => scrollTo("home")}>Home</MenuItem>*/}
               <MenuItem onClick={() => scrollTo("about")}>About</MenuItem>
               <MenuItem onClick={() => scrollTo("experience")}>
                 Experience

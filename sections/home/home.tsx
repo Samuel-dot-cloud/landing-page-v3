@@ -9,7 +9,7 @@ import {
 
 const Top = () => {
   return (
-    <Section id="home">
+    <Section id="about">
       <Container>
         <Box>
           <Title>Hey, I&apos;m Samuel 👋</Title>
