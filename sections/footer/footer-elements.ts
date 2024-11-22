@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  min-height: 100vh;
-  height: 100vh;
+  //min-height: 100vh;
+  height: 40vh;
   width: 100vw;
-  background-color: ${props => props.theme.body};
+  background-color: ${(props) => props.theme.body};
   transition: all 0.3s linear;
   position: relative;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
 
   display: flex;
   overflow: hidden;
@@ -15,30 +15,30 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-    width: 75%;
+  width: 75%;
   margin: 2rem auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid ${props => props.theme.text};
+  border-bottom: 1px solid ${(props) => props.theme.text};
 `;
 
 export const Left = styled.div`
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
 export const IconList = styled.div`
-    display: flex;
+  display: flex;
   align-items: center;
   margin: 1rem auto;
-  
-  &>* {
+
+  & > * {
     padding-right: 0.5rem;
     transition: all 0.2s ease;
-    
+
     &:hover {
       transform: scale(1.2);
     }
@@ -46,7 +46,7 @@ export const IconList = styled.div`
 `;
 
 export const MenuItems = styled.ul`
-    list-style: none;
+  list-style: none;
   width: 50%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -59,28 +59,28 @@ export const Item = styled.li`
   cursor: pointer;
 
   &::after {
-    content: ' ';
+    content: " ";
     display: block;
     width: 0;
     height: 2px;
-    background: ${props => props.theme.text};
+    background: ${(props) => props.theme.text};
     transition: width 0.3s ease;
   }
 
   &:hover::after {
-    width: 100%
+    width: 100%;
   }
 `;
 
 export const ItemsTitle = styled.li`
   width: fit-content;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 
   &::after {
-    content: ' ';
+    content: " ";
     display: block;
     height: 2px;
-    background: ${props => props.theme.text};
+    background: ${(props) => props.theme.text};
   }
 `;
 
