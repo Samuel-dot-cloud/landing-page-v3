@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Section = styled.section`
   min-height: ${(props) => `calc(100vh - ${props.theme.navHeight})`};
@@ -78,12 +79,30 @@ export const Subtitle = styled.h3`
   }
 `;
 
-export const ButtonContainer = styled.div`
-  width: 80%;
-  align-self: flex-start;
+export const StyledImage = styled(Image)`
+  width: 30vw;
+  height: 50vh;
+  border-radius: 20px;
+  border: 1px solid ${(props) => props.theme.text};
+  filter: grayscale(100%);
+  transition: all 0.2s ease;
+
+  &:hover {
+    filter: grayscale(0%);
+  }
+
+  @media (max-width: 64em) {
+    height: 30vh;
+    width: 50vw;
+  }
 
   @media (max-width: 48em) {
-    align-self: center;
-    text-align: center;
+    height: 25vh;
+    width: 50vw;
+  }
+
+  @media (max-width: 30em) {
+    height: 25vh;
+    width: 50vw;
   }
 `;

@@ -1,5 +1,11 @@
-import { Box, Container, Section, Subtitle, Title } from "./home-elements";
-import CoverAnimation from "../../components/cover-animation";
+import {
+  Box,
+  Container,
+  Section,
+  Subtitle,
+  Title,
+  StyledImage,
+} from "./home-elements";
 
 const Top = () => {
   return (
@@ -27,7 +33,12 @@ const Top = () => {
           </Subtitle>
         </Box>
         <Box>
-          <CoverAnimation />
+          <StyledImage
+            src="/profile-image.jpeg"
+            alt="Profile Image"
+            width={500}
+            height={500}
+          />
         </Box>
       </Container>
     </Section>
