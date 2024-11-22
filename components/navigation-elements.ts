@@ -1,76 +1,61 @@
 import styled from "styled-components";
-import {FiMoon, FiSun, FiVolume2, FiVolumeX} from "react-icons/fi";
-
+import { FiMoon, FiSun, FiVolume2, FiVolumeX } from "react-icons/fi";
 
 export const Section = styled.section`
   width: 100vw;
-  background-color: ${props => props.theme.body};
+  background-color: ${(props) => props.theme.body};
   transition: all 0.3s ease;
 `;
 
 export const NavBar = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 87%;
+  height: ${(props) => props.theme.navHeight};
+  margin: 0 auto;
+
+  .icons-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-self: center;
+    margin-bottom: 0.5em;
+    gap: 1rem;
+  }
+
+  .menu-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     align-items: center;
+  }
 
-    width: 87%;
-    height: ${props => props.theme.navHeight};
-    margin: 0 auto;
-
-    .row {
-        display: flex;
-        justify-content: space-evenly;
-        align-self: center;
-        margin-bottom: 0.5em;
-    }
-
-    .desktop-1 {
-        width: 60px;
-        height: 60px;
-        padding-left: 1em;
-        padding-top: 2em;
-    }
-
-    .desktop-2 {
-        width: 60px;
-        height: 60px;
-        padding-top: 2em;
-    }
-
-    .mobile {
-        display: none;
-        border-radius: 10px;
-        width: 60px;
-        height: 60px;
-    }
-
-    //@media (max-width: 64em) {
-    //  .row {
-    //    display: none;
-    //  }
-    //  .mobile {
-    //    display: inline-block;
-    //  }
-    //}
+  .desktop-1,
+  .desktop-2 {
+    width: 60px;
+    height: 60px;
+    padding-top: 2em;
+  }
 `;
 
 export const MoonIcon = styled(FiMoon)`
-    color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
 `;
 
 export const SunIcon = styled(FiSun)`
-    color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
 `;
 
 export const Volume2Icon = styled(FiVolume2)`
-    color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
 `;
 
 export const VolumeXIcon = styled(FiVolumeX)`
-    color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
 `;
 
-export const Menu = styled.ul<{click: boolean}>`
+export const Menu = styled.ul<{ click: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,18 +63,19 @@ export const Menu = styled.ul<{click: boolean}>`
 
   @media (max-width: 64em) {
     position: fixed;
-    top: ${props => props.theme.navHeight};
+    top: ${(props) => props.theme.navHeight};
     left: 0;
     right: 0;
     bottom: 0;
     width: 100vw;
-    height: ${props => `calc(100vh - ${props.theme.navHeight})`};
+    height: ${(props) => `calc(100vh - ${props.theme.navHeight})`};
     z-index: 50;
-    background-color: ${props => `rgba(${props.theme.bodyRgba},0.85)`};
+    background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.85)`};
     transition: all 0.3s linear;
     backdrop-filter: blur(2px);
 
-    transform: ${props => props.click ? `translateY(0)` : `translateY(1000%)`};
+    transform: ${(props) =>
+      props.click ? `translateY(0)` : `translateY(1000%)`};
     flex-direction: column;
     justify-content: center;
   }
@@ -97,40 +83,43 @@ export const Menu = styled.ul<{click: boolean}>`
 
 export const MenuItem = styled.li`
   margin: 0 1rem;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   cursor: pointer;
 
   &::after {
-    content: ' ';
+    content: " ";
     display: block;
     width: 0;
     height: 2px;
-    background: ${props => props.theme.text};
+    background: ${(props) => props.theme.text};
     transition: width 0.3s ease;
   }
 
   &:hover::after {
     width: 100%;
   }
-  
+
   @media (max-width: 64em) {
     margin: 1rem 0;
-    
+
     &::after {
       display: none;
     }
   }
 `;
 
-export const HamburgerMenu = styled.span<{click: boolean}>`
-  width: ${props => props.click ? '2rem' : '1.5rem'};
+export const HamburgerMenu = styled.span<{ click: boolean }>`
+  width: ${(props) => (props.click ? "2rem" : "1.5rem")};
   height: 2px;
-  background: ${props => props.theme.text};
+  background: ${(props) => props.theme.text};
 
   position: absolute;
   top: 2rem;
   left: 50%;
-  transform: ${props => props.click ? 'translateX(-50%) rotate(90deg)' : 'translateX(-50%) rotate(0)'};
+  transform: ${(props) =>
+    props.click
+      ? "translateX(-50%) rotate(90deg)"
+      : "translateX(-50%) rotate(0)"};
 
   display: none;
   justify-content: center;
@@ -138,28 +127,29 @@ export const HamburgerMenu = styled.span<{click: boolean}>`
 
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   @media (max-width: 64em) {
     display: flex;
   }
 
-  &::after, &::before {
-    content: ' ';
-    width: ${props => props.click ? '1rem' : '1.5rem'};
+  &::after,
+  &::before {
+    content: " ";
+    width: ${(props) => (props.click ? "1rem" : "1.5rem")};
     height: 2px;
-    right: ${props => props.click ? '-2px' : '0'};
-    background: ${props => props.theme.text};
+    right: ${(props) => (props.click ? "-2px" : "0")};
+    background: ${(props) => props.theme.text};
     position: absolute;
     transition: all 0.3s ease;
   }
 
   &::after {
-    top: ${props => props.click ? '0.3rem' : '0.5rem'};
-    transform: ${props => props.click ? 'rotate(-40deg)' : 'rotate(0)'};
+    top: ${(props) => (props.click ? "0.3rem" : "0.5rem")};
+    transform: ${(props) => (props.click ? "rotate(-40deg)" : "rotate(0)")};
   }
 
   &::before {
-    bottom: ${props => props.click ? '0.3rem' : '0.5rem'};
-    transform: ${props => props.click ? 'rotate(40deg)' : 'rotate(0)'};
+    bottom: ${(props) => (props.click ? "0.3rem" : "0.5rem")};
+    transform: ${(props) => (props.click ? "rotate(40deg)" : "rotate(0)")};
   }
 `;
