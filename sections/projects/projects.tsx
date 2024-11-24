@@ -1,6 +1,7 @@
 import {
   ButtonGroup,
   Container,
+  LargeTitle,
   ProjectBox,
   ProjectContent,
   Section,
@@ -22,6 +23,7 @@ import { FiDownload } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const Projects = () => {
   interface Technology {
@@ -105,21 +107,27 @@ const Projects = () => {
         "SysScope is a macOS system monitoring application that provides detailed system information," +
         " including battery, CPU, memory and disk stats, together with the various running processes specific to those stats.",
       technologies: ["React", "Typescript", "Rust", "Tauri", "Swift"],
-      image: "/projects/foodyshare.png",
+      image: "/projects/syscope.jpg",
+      sourceLink: "https://github.com/Samuel-dot-cloud/sys-scope",
+      downloadLink: "https://github.com/Samuel-dot-cloud/sys-scope/releases",
     },
   ];
 
   return (
     <Section id="projects">
-      <Title>Projects</Title>
+      <LargeTitle>Projects</LargeTitle>
       <Container>
         <Swiper
           modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          pagination={{ type: "fraction" }}
           spaceBetween={0}
           slidesPerView={1}
           className="mySwiper"
+          allowTouchMove={true}
         >
           {projectsData.map((project, index) => (
             <SwiperSlide key={index}>
@@ -139,7 +147,7 @@ const Projects = () => {
                       const techData = technologyMap[tech];
                       if (!techData) return null;
                       return (
-                        <a
+                        <Link
                           href={techData.link}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -149,7 +157,7 @@ const Projects = () => {
                             <techData.icon size={20} />
                             <span>{techData.name}</span>
                           </StyledTech>
-                        </a>
+                        </Link>
                       );
                     })}
                   </div>
@@ -180,6 +188,8 @@ const Projects = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
       </Container>
     </Section>
   );
