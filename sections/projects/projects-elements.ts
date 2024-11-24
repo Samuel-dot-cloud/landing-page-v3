@@ -6,7 +6,7 @@ export const StyledImage = styled(Image)`
   flex-shrink: 0;
   width: 300px;
   height: 300px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   margin: 0 auto;
 `;
@@ -20,8 +20,7 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  width: 100%;
-  max-width: 1400px;
+  width: 90%;
   margin: 0 auto;
   position: relative;
 
