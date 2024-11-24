@@ -1,145 +1,216 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 
 export const StyledImage = styled(Image)`
-  width: 50vw;
-  height: 60vh;
-  transition: all 0.2s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-  
-
-  @media (max-width: 64em) {
-    height: 37vh;
-    width: 70vw;
-  }
-
-  @media (max-width: 48em) {
-    height: 37vh;
-    width: 67vw;
-  }
-
-  @media (max-width: 30em) {
-    height: 40vh;
-    width: 85vw;
-  }
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0 auto;
 `;
 
 export const Section = styled.section`
-  min-height: 100vh;
+  min-height: 65vh;
   width: 100%;
-  background-color: ${props => props.theme.body};
+  background-color: ${(props) => props.theme.body};
   transition: all 0.3s linear;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+  padding: 5%;
 `;
 
 export const Container = styled.div`
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
+  position: relative;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: ${(props) => props.theme.text};
+    font-size: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 10;
 
-  @media (max-width: 70em) {
-    width: 85%;
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      top: 50%;
+    }
   }
 
-  @media (max-width: 64em) {
-    width: 100%;
+  .swiper-button-prev {
+    left: -70px;
+
+    @media (max-width: 768px) {
+      left: 10px;
+    }
+  }
+
+  .swiper-button-next {
+    right: 5px;
+
+    @media (max-width: 768px) {
+      right: 30px;
+    }
+  }
+
+  .swiper-pagination {
+    margin-top: 30px;
+  }
+
+  .swiper-pagination-fraction {
+    font-size: ${(props) => props.theme.fontmd};
+    color: ${(props) => props.theme.text};
+  }
+`;
+
+export const ProjectBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: ${(props) => props.theme.body};
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(${(props) => props.theme.bodyRgba}, 0.1);
+
+  @media (max-width: 768px) {
     flex-direction: column;
-
-    &>*:last-child {
-      width: 80%;
-    }
-  }
-
-  @media (max-width: 40em) {
-
-    &>*:last-child {
-      width: 90%;
-    }
-  }
-`;
-
-export const Box = styled.div`
-  width: 50%;
-  height: 100%;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  @media (max-width: 40em) {
-    min-height: 50vh;
-  }
-`;
-
-export const Title = styled.h2`
-  font-size: ${props => props.theme.fontxxl};
-  text-transform: capitalize;
-  width: 80%;
-  color: ${props => props.theme.text};
-  align-self: flex-start;
-  margin: 0 auto;
-
-  @media (max-width: 64em) {
-    width: 100%;
     text-align: center;
   }
-  @media (max-width: 40em) {
-    font-size: ${props => props.theme.fontxl};
-  }
-  @media (max-width: 30em) {
-    font-size: ${props => props.theme.fontlg};
+`;
+
+export const ProjectContent = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const LargeTitle = styled.h2`
+  font-size: ${(props) => props.theme.fontxxl};
+  text-transform: capitalize;
+  width: 90%;
+  color: ${(props) => props.theme.text};
+  align-self: center;
+  padding-left: 3rem;
+  margin-bottom: 2rem;
+`;
+
+export const Title = styled.h3`
+  font-size: ${(props) => props.theme.fontxl};
+  color: ${(props) => props.theme.text};
+  margin: 1rem 0;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    padding-top: 30px;
   }
 `;
 
 export const SubText = styled.p`
-  font-size: ${props => props.theme.fontlg};
-  width: 80%;
-  color: ${props => props.theme.text};
-  align-self: flex-start;
-  margin: 1rem auto;
-  font-weight: 400;
+  font-size: ${(props) => props.theme.fontlg};
+  color: ${(props) => props.theme.text};
+  margin: 0.5rem 0;
+  text-align: left;
 
-  @media (max-width: 64em) {
-    width: 100%;
-    text-align: center;
-    font-size: ${props => props.theme.fontmd};
-  }
-  @media (max-width: 40em) {
-    font-size: ${props => props.theme.fontmd};
-  }
-  @media (max-width: 30em) {
-    font-size: ${props => props.theme.fontsm};
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontmd};
   }
 `;
 
 export const SubTextLight = styled.p`
-  font-size: ${props => props.theme.fontmd};
-  width: 80%;
-  color: ${props => `rgba(${props.theme.textRgba},0.6)`};
-  align-self: flex-start;
-  margin: 1rem auto;
-  font-weight: 400;
+  font-size: ${(props) => props.theme.fontmd};
+  color: ${(props) => `rgba(${props.theme.textRgba},0.6)`};
+  margin: 0.5rem 0;
+  text-align: left;
 
-  @media (max-width: 64em) {
-    width: 100%;
-    text-align: center;
-    font-size: ${props => props.theme.fontsm};
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontsm};
   }
-  @media (max-width: 40em) {
-    font-size: ${props => props.theme.fontsm};
+`;
+
+const shimmer = keyframes`
+    0% {
+        background-position: -200%;
+    }
+    100% {
+        background-position: 200%;
+    }
+`;
+
+export const StyledTech = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: ${(props) => props.theme.fontsm};
+  color: ${(props) => props.theme.text};
+  border: 1px solid ${(props) => props.theme.text};
+  border-radius: 20px;
+  transition: all 0.3s linear;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background: linear-gradient(
+      90deg,
+      ${(props) => props.theme.text} 25%,
+      ${(props) => props.theme.text} 50%,
+      ${(props) => props.theme.text} 75%
+    );
+    background-size: 200%;
+    animation: ${shimmer} 1.5s infinite;
+    color: ${(props) => props.theme.body};
   }
-  @media (max-width: 30em) {
-    font-size: ${props => props.theme.fontxs};
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  svg {
+    position: relative;
+    z-index: 1;
+  }
+`;
+
+export const ButtonGroup = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
+const shake = keyframes`
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+    75% {
+        transform: translateX(-1px);
+    }
+`;
+
+export const StyledButton = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: ${(props) => props.theme.text};
+  border: 1px solid ${(props) => props.theme.text};
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: ${(props) => props.theme.fontButton};
+  transition: all 0.3s linear;
+
+  &:hover {
+    animation: ${shake} 0.3s linear;
+    text-decoration: underline;
   }
 `;
