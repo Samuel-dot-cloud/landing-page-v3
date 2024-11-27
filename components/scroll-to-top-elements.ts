@@ -29,9 +29,4 @@ export const Up = styled.div`
   &:active {
     transform: scale(0.9);
   }
-
-  @media (max-width: 768px) {
-    right: 3rem;
-    bottom: 0.5rem;
-  }
 `;

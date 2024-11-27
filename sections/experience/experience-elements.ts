@@ -45,6 +45,7 @@ export const StyledTabs = styled(Tabs)`
   .ant-tabs-tab {
     margin: 0 8px;
     font-size: ${(props) => props.theme.fontlg};
+    font-family: "Nunito", sans-serif;
   }
 
   .ant-tabs-content-holder {
@@ -80,6 +81,7 @@ export const TabContent = styled.div`
 export const DetailItem = styled.li`
   margin: 0.5rem 0;
   font-size: ${(props) => props.theme.fontlg};
+  font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme.text};
   line-height: 1.6;
   overflow-wrap: break-word;
@@ -111,14 +113,4 @@ export const SubTextLight = styled.p`
   align-self: flex-start;
   margin: 1rem auto;
   font-weight: 400;
-
-  @media (max-width: 64em) {
-    font-size: ${(props) => props.theme.fontsm};
-  }
-  @media (max-width: 40em) {
-    font-size: ${(props) => props.theme.fontsm};
-  }
-  @media (max-width: 30em) {
-    font-size: ${(props) => props.theme.fontxs};
-  }
 `;
