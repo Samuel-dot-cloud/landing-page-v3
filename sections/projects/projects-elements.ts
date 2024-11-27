@@ -12,7 +12,7 @@ export const StyledImage = styled(Image)`
 `;
 
 export const Section = styled.section`
-  min-height: 65vh;
+  min-height: 50vh;
   width: 100%;
   background-color: ${(props) => props.theme.body};
   transition: all 0.3s linear;

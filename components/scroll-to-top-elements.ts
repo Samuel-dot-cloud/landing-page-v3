@@ -6,10 +6,10 @@ export const Up = styled.div`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: ${props => props.theme.body};
-  background-color: ${props => props.theme.text};
+  color: ${(props) => props.theme.body};
+  background-color: ${(props) => props.theme.text};
 
-  font-size: ${props => props.theme.fontxl};
+  font-size: ${(props) => props.theme.fontxl};
   position: fixed;
   right: 1rem;
   bottom: 1rem;
