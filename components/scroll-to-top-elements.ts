@@ -6,10 +6,10 @@ export const Up = styled.div`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: ${props => props.theme.body};
-  background-color: ${props => props.theme.text};
+  color: ${(props) => props.theme.body};
+  background-color: ${(props) => props.theme.text};
 
-  font-size: ${props => props.theme.fontxl};
+  font-size: ${(props) => props.theme.fontxl};
   position: fixed;
   right: 1rem;
   bottom: 1rem;
@@ -20,6 +20,7 @@ export const Up = styled.div`
   align-items: center;
   border-radius: 50%;
   transition: all 0.2s ease;
+  z-index: 3;
 
   &:hover {
     transform: scale(1.2);
