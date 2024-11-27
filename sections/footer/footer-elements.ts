@@ -29,14 +29,11 @@ export const Container = styled.div`
 export const Left = styled.div`
   display: flex;
   flex-direction: column;
-  //justify-content: center;
   align-items: center;
 `;
 
 export const IconList = styled.div`
   display: flex;
-  //align-items: center;
-  //margin: 1rem auto;
   gap: 1rem;
 
   & > * {
@@ -82,15 +79,6 @@ export const ColumnTitle = styled.li`
   }
 `;
 
-export const MenuItems = styled.ul`
-  list-style: none;
-  width: 50%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 1rem;
-`;
-
 export const Item = styled.li`
   width: fit-content;
   position: relative;
@@ -107,18 +95,6 @@ export const Item = styled.li`
 
   &:hover::after {
     width: 100%;
-  }
-`;
-
-export const ItemsTitle = styled.li`
-  width: fit-content;
-  font-family: "Raleway", sans-serif;
-
-  &::after {
-    content: " ";
-    display: block;
-    height: 2px;
-    background: ${(props) => props.theme.text};
   }
 `;
 

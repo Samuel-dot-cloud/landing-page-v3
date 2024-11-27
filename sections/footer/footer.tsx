@@ -5,17 +5,15 @@ import {
   Container,
   IconList,
   Item,
-  ItemsTitle,
   Left,
   MenuContainer,
-  MenuItems,
   Section,
 } from "./footer-elements";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { MdEmail } from "react-icons/md";
 import { BsTwitterX } from "react-icons/bs";
-import { FaFilePdf, FaGithub, FaLinkedin, FaRegFilePdf } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaRegFilePdf } from "react-icons/fa";
 import resumePDF from "../../public/ resume.pdf";
 
 const Footer = () => {
