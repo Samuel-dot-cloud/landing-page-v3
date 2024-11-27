@@ -1,27 +1,32 @@
-import {createGlobalStyle} from "styled-components";
-import "@fontsource/nunito"
-import "@fontsource/raleway"
-
+import { createGlobalStyle } from "styled-components";
+import "@fontsource/nunito";
+import "@fontsource/raleway";
 
 export const GlobalStyles = createGlobalStyle`
 
-    *,*::before,*::after {
-      margin: 0;
-      padding: 0;
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
     }
-    
+
     body {
-      font-family: 'Nunito', sans-serif;
-      overflow-x: hidden;
+        font-family: 'Nunito', sans-serif;
+        overflow-x: hidden;
     }
-    
-    h1,h2,h3,h4,h5,h6 {
-      margin: 0;
-      padding: 0;
+
+    #__next {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
     }
-    
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+
     a {
-      color: inherit;
-      text-decoration: none;
+        color: inherit;
+        text-decoration: none;
     }
-`
+`;

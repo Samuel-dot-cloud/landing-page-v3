@@ -20,6 +20,7 @@ export const Up = styled.div`
   align-items: center;
   border-radius: 50%;
   transition: all 0.2s ease;
+  z-index: 3;
 
   &:hover {
     transform: scale(1.2);
@@ -27,5 +28,10 @@ export const Up = styled.div`
 
   &:active {
     transform: scale(0.9);
+  }
+
+  @media (max-width: 768px) {
+    right: 3rem;
+    bottom: 0.5rem;
   }
 `;
