@@ -17,7 +17,7 @@ const bookItems: CarouselItem[] = [
   },
   {
     id: 2,
-    image: "/books/react-cookbook.jpeg",
+    image: "/books/flutter-engineering.png",
   },
   {
     id: 3,
@@ -29,7 +29,15 @@ const bookItems: CarouselItem[] = [
   },
   {
     id: 5,
-    image: "/books/atomic.jpeg",
+    image: "/books/modern-concurrency.jpg",
+  },
+  {
+    id: 6,
+    image: "/books/programming-rust.jpg",
+  },
+  {
+    id: 7,
+    image: "/books/combine.jpg",
   },
 ];
 
