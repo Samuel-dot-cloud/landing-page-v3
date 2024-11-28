@@ -1,4 +1,3 @@
-import { Button } from "antd";
 import styled from "styled-components";
 import Link from "next/link";
 
@@ -40,38 +39,28 @@ export const StyledButton = styled(Link)`
     width: 100%;
   }
 
-  /* Responsive adjustments */
   @media (max-width: 1024px) {
     padding: 10px 15px;
-    font-size: ${(props) => props.theme.fontmd || "1rem"};
-    margin-left: 1rem; /* Adjust left margin for smaller screens */
+    font-size: ${(props) => props.theme.fontmd};
+    margin-left: 1rem;
   }
 
   @media (max-width: 768px) {
     padding: 8px 10px;
-    font-size: ${(props) => props.theme.fontsm || "0.9rem"};
-    margin-left: 0.5rem; /* Adjust further for smaller screens */
+    font-size: ${(props) => props.theme.fontsm};
+    margin-left: 0.5rem;
   }
 
   @media (max-width: 480px) {
     padding: 6px 8px;
-    font-size: ${(props) => props.theme.fontxs || "0.8rem"};
-    margin-left: 0.5rem; /* Ensure space is still present */
+    font-size: ${(props) => props.theme.fontxs};
+    margin-left: 0.5rem;
   }
 `;
 
 export const Main = styled.main`
   background-color: ${(props) => props.theme.body};
-  // color: ${(props) => props.theme.text || "#333"};
   min-height: 100vh;
   padding: 0;
   margin: 0;
-`;
-
-export const BackButtonContainer = styled.div`
-  // width: 100%;
-  // display: flex;
-  // justify-content: flex-start;
-  // padding-left: 8rem;
-  // background-color: ${(props) => props.theme.body};
 `;

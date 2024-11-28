@@ -4,7 +4,7 @@ import { GlobalStyles } from "../styles/globals";
 import { DefaultTheme, ThemeProvider } from "styled-components";
 import { dark, light } from "../styles/themes";
 import { useEffect, useState } from "react";
-import { ThemeContext } from "../components/use-theme";
+import { ThemeContext } from "../hooks/use-theme";
 import { Howler } from "howler";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
@@ -81,7 +81,13 @@ export default function App({ Component, pageProps }: AppProps) {
           value={{ theme, isSoundOn, toggleTheme, toggleMode }}
         >
           <Component {...pageProps} />
-          <Analytics mode={"production"} />
+          <Analytics
+            mode={
+              process.env.NODE_ENV === "development"
+                ? "development"
+                : "production"
+            }
+          />
         </ThemeContext.Provider>
       </ThemeProvider>
     </>
