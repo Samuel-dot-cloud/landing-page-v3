@@ -11,7 +11,7 @@ import {
 } from "./navigation-elements";
 import { Howl } from "howler";
 import { useRef, useState } from "react";
-import { useTheme } from "./use-theme";
+import { useTheme } from "../hooks/use-theme";
 import { Tooltip } from "antd";
 
 const Navigation = ({ isGlobal }: { isGlobal: boolean }) => {

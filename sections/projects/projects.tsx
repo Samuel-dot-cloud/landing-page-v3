@@ -24,6 +24,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Link from "next/link";
+import { Howl } from "howler";
 
 const Projects = () => {
   interface Technology {
@@ -113,6 +114,13 @@ const Projects = () => {
     },
   ];
 
+  const sound = new Howl({
+    src: ["/turn.mp3"],
+    rate: 1.5,
+  });
+
+  let isManualTurn = false;
+
   return (
     <Section id="projects">
       <LargeTitle>Projects</LargeTitle>
@@ -124,10 +132,28 @@ const Projects = () => {
             prevEl: ".swiper-button-prev",
           }}
           pagination={{ type: "fraction" }}
+          loop={true}
           spaceBetween={0}
           slidesPerView={1}
           className="mySwiper"
           allowTouchMove={true}
+          onTransitionStart={() => {
+            if (isManualTurn) {
+              sound.play();
+              isManualTurn = false;
+            }
+          }}
+          onTouchStart={() => {
+            isManualTurn = true;
+          }}
+          // onSlideChangeTransitionStart={(swiper) => {
+          //   if (swiper.autoplay.running) {
+          //     isManualTurn = false;
+          //   }
+          // }}
+          onClick={() => {
+            isManualTurn = true;
+          }}
         >
           {projectsData.map((project, index) => (
             <SwiperSlide key={index}>
@@ -188,8 +214,8 @@ const Projects = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
+        <div className="swiper-button-prev" onClick={() => sound.play()}></div>
+        <div className="swiper-button-next" onClick={() => sound.play()}></div>
       </Container>
     </Section>
   );

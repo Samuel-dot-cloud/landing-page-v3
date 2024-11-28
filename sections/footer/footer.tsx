@@ -75,7 +75,6 @@ const Footer = () => {
         <MenuContainer>
           <Column>
             <ColumnTitle>Sections</ColumnTitle>
-            <Item onClick={() => scrollTo("home")}>Home</Item>
             <Item onClick={() => scrollTo("about")}>About</Item>
             <Item onClick={() => scrollTo("experience")}>Experience</Item>
             <Item onClick={() => scrollTo("projects")}>Projects</Item>

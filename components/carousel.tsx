@@ -1,11 +1,10 @@
-import { Box, Container } from "./carousel-elements";
+import { Box, Container, StyledImage } from "./carousel-elements";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import Image from "next/image";
 import { SwiperModule } from "swiper/types";
 import { Howl } from "howler";
 
@@ -67,7 +66,13 @@ const Carousel = ({
         {items.map((item) => (
           <SwiperSlide key={item.id}>
             <Box>
-              <Image height={180} width={180} src={item.image} alt="" />
+              <StyledImage
+                height={180}
+                width={180}
+                src={item.image}
+                alt="Carousel card image"
+                priority
+              />
             </Box>
           </SwiperSlide>
         ))}
