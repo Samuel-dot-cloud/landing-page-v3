@@ -120,7 +120,7 @@ export const SubText = styled.p`
 
 export const SubTextLight = styled.p`
   font-size: ${(props) => props.theme.fontmd};
-  color: ${(props) => `rgba(${props.theme.textRgba},0.6)`};
+  color: ${(props) => `rgba(${props.theme.textRgba},0.8)`};
   margin: 0.5rem 0;
   text-align: left;
 

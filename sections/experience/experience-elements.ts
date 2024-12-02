@@ -109,7 +109,7 @@ export const Title = styled.h2`
 
 export const SubTextLight = styled.p`
   font-size: ${(props) => props.theme.fontlg};
-  color: ${(props) => `rgba(${props.theme.textRgba},0.6)`};
+  color: ${(props) => `rgba(${props.theme.textRgba},0.8)`};
   align-self: flex-start;
   margin: 1rem auto;
   font-weight: 400;

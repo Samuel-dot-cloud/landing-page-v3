@@ -98,7 +98,7 @@ export const SubText = styled.p`
 export const SubTextLight = styled.p`
   font-size: ${(props) => props.theme.fontmd};
   width: 80%;
-  color: ${(props) => `rgba(${props.theme.textRgba},0.6)`};
+  color: ${(props) => `rgba(${props.theme.textRgba},0.8)`};
   align-self: flex-start;
   margin: 1rem auto;
   font-weight: 400;
