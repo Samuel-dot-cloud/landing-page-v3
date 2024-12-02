@@ -45,7 +45,7 @@ export const StyledTabs = styled(Tabs)`
   .ant-tabs-tab {
     margin: 0 8px;
     font-size: ${(props) => props.theme.fontlg};
-    font-family: "Nunito", sans-serif;
+    font-family: "JetBrains Mono Variable", monospace;
   }
 
   .ant-tabs-content-holder {
@@ -81,7 +81,7 @@ export const TabContent = styled.div`
 export const DetailItem = styled.li`
   margin: 0.5rem 0;
   font-size: ${(props) => props.theme.fontlg};
-  font-family: "Nunito", sans-serif;
+  font-family: "JetBrains Mono Variable", monospace;
   color: ${(props) => props.theme.text};
   line-height: 1.6;
   overflow-wrap: break-word;
@@ -100,6 +100,7 @@ export const LargeTitle = styled.h1`
 
 export const Title = styled.h2`
   font-size: ${(props) => props.theme.fontxl};
+  font-family: "JetBrains Mono Variable", monospace;
   text-transform: capitalize;
   width: 100%;
   color: ${(props) => props.theme.text};
@@ -109,6 +110,7 @@ export const Title = styled.h2`
 
 export const SubTextLight = styled.p`
   font-size: ${(props) => props.theme.fontlg};
+  font-family: "JetBrains Mono Variable", monospace;
   color: ${(props) => `rgba(${props.theme.textRgba},0.8)`};
   align-self: flex-start;
   margin: 1rem auto;

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.22.0",
-    "@fontsource/nunito": "^4.5.11",
+    "@fontsource-variable/jetbrains-mono": "^5.1.1",
     "@fontsource/raleway": "^4.5.11",
     "@next/font": "13.1.1",
     "@types/node": "18.11.18",
