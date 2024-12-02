@@ -146,11 +146,6 @@ const Projects = () => {
           onTouchStart={() => {
             isManualTurn = true;
           }}
-          // onSlideChangeTransitionStart={(swiper) => {
-          //   if (swiper.autoplay.running) {
-          //     isManualTurn = false;
-          //   }
-          // }}
           onClick={() => {
             isManualTurn = true;
           }}
