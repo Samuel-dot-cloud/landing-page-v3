@@ -8,7 +8,6 @@ import {
   SubTextLight,
   Title,
 } from "./books-section-elements";
-import BackButton from "../../components/back-button";
 
 const bookItems: CarouselItem[] = [
   {
