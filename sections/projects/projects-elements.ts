@@ -48,6 +48,8 @@ export const Container = styled.div`
     right: 2%;
   }
 
+  /* eslint-disable no-unused-vars */
+
   .swiper-pagination {
     margin-top: 20px;
   }

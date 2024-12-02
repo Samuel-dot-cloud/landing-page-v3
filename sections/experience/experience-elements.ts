@@ -33,6 +33,8 @@ export const StyledTabs = styled(Tabs)`
   width: 100%;
   font-size: ${(props) => props.theme.fontlg};
 
+  /* eslint-disable no-unused-vars */
+
   .ant-tabs-nav {
     display: flex;
     justify-content: center;
