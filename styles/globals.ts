@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import "@fontsource/nunito";
 import "@fontsource/raleway";
+import "@fontsource-variable/jetbrains-mono";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: 'Nunito', sans-serif;
+        font-family: 'JetBrains Mono Variable', monospace;
         overflow-x: hidden;
     }
 

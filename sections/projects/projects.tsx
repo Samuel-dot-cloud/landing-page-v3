@@ -18,7 +18,7 @@ import { SiDart, SiGithub, SiTauri } from "react-icons/si";
 import { BiLogoFirebase, BiLogoTypescript } from "react-icons/bi";
 import { FaReact, FaRust, FaSwift } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Keyboard } from "swiper";
 import { FiDownload } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -126,7 +126,7 @@ const Projects = () => {
       <LargeTitle>Projects</LargeTitle>
       <Container>
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination, Keyboard]}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -137,6 +137,10 @@ const Projects = () => {
           slidesPerView={1}
           className="mySwiper"
           allowTouchMove={true}
+          keyboard={{
+            enabled: true,
+            onlyInViewport: true,
+          }}
           onTransitionStart={() => {
             if (isManualTurn) {
               sound.play();
@@ -146,12 +150,10 @@ const Projects = () => {
           onTouchStart={() => {
             isManualTurn = true;
           }}
-          // onSlideChangeTransitionStart={(swiper) => {
-          //   if (swiper.autoplay.running) {
-          //     isManualTurn = false;
-          //   }
-          // }}
           onClick={() => {
+            isManualTurn = true;
+          }}
+          onKeyPress={() => {
             isManualTurn = true;
           }}
         >
@@ -179,8 +181,8 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           key={techData.name}
                         >
-                          <StyledTech>
-                            <techData.icon size={20} />
+                          <StyledTech aria-label={techData.name}>
+                            <techData.icon size={20} aria-hidden="true" />
                             <span>{techData.name}</span>
                           </StyledTech>
                         </Link>
@@ -193,8 +195,13 @@ const Projects = () => {
                         href={project.downloadLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="Download live app"
                       >
-                        <FiDownload size={18} />
+                        <FiDownload
+                          size={18}
+                          title="Download"
+                          aria-hidden="true"
+                        />
                         <span>Download</span>
                       </StyledButton>
                     )}
@@ -203,8 +210,9 @@ const Projects = () => {
                         href={project.sourceLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="View source code on GitHub"
                       >
-                        <SiGithub size={18} />
+                        <SiGithub size={18} title="Github" aria-hidden="true" />
                         <span>Source code</span>
                       </StyledButton>
                     )}
@@ -214,8 +222,20 @@ const Projects = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiper-button-prev" onClick={() => sound.play()}></div>
-        <div className="swiper-button-next" onClick={() => sound.play()}></div>
+        <div
+          className="swiper-button-prev"
+          onClick={() => sound.play()}
+          aria-label="Previous slide"
+          role="button"
+          tabIndex={0}
+        ></div>
+        <div
+          className="swiper-button-next"
+          onClick={() => sound.play()}
+          aria-label="Next slide"
+          role="button"
+          tabIndex={0}
+        ></div>
       </Container>
     </Section>
   );

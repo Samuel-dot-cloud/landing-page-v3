@@ -7,7 +7,6 @@ import {
   SubTextLight,
   Title,
 } from "./newsletters-section-elements";
-import { Autoplay, EffectCards, Navigation, Pagination } from "swiper";
 
 const newsletterItems: CarouselItem[] = [
   {
@@ -37,10 +36,7 @@ const NewslettersSection = () => {
     <Section>
       <Container>
         <Box>
-          <Carousel
-            modules={[EffectCards, Pagination, Navigation, Autoplay]}
-            items={newsletterItems}
-          />
+          <Carousel items={newsletterItems} />
         </Box>
         <Box>
           <Title>Newsletters</Title>

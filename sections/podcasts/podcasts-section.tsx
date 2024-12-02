@@ -1,5 +1,4 @@
 import Carousel, { CarouselItem } from "../../components/carousel";
-import { Autoplay, EffectCards, Navigation, Pagination } from "swiper";
 import {
   Box,
   Container,
@@ -45,10 +44,7 @@ const PodcastsSection = () => {
     <Section>
       <Container>
         <Box>
-          <Carousel
-            modules={[EffectCards, Pagination, Navigation, Autoplay]}
-            items={podcastItems}
-          />
+          <Carousel items={podcastItems} />
         </Box>
         <Box>
           <Title>Podcasts</Title>

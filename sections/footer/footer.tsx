@@ -38,6 +38,7 @@ const Footer = () => {
               href="https://github.com/Samuel-dot-cloud"
               target="_blank"
               rel="noopener"
+              aria-label="GitHub repo"
             >
               <FaGithub size={22} />
             </Link>
@@ -45,6 +46,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/samuel-wahome-571a1a1b0/"
               target="_blank"
               rel="noopener"
+              aria-label="LinkedIn profile"
             >
               <FaLinkedin size={22} />
             </Link>
@@ -52,6 +54,7 @@ const Footer = () => {
               href="https://twitter.com/samuelwahome_"
               target="_blank"
               rel="noopener"
+              aria-label="X profile"
             >
               <BsTwitterX size={22} />
             </Link>
@@ -59,6 +62,7 @@ const Footer = () => {
               href="mailto:hey@samwahome.com"
               target="_blank"
               rel="noopener"
+              aria-label="Email address"
             >
               <MdEmail size={22} />
             </Link>
@@ -67,6 +71,7 @@ const Footer = () => {
               download="resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Download resume"
             >
               <FaRegFilePdf size={22} />
             </Link>

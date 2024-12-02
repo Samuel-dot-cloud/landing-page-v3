@@ -28,10 +28,11 @@ export const Container = styled.div`
   .swiper-button-prev {
     color: ${(props) => props.theme.text};
     font-size: 2rem;
-    top: 50%;
+    top: calc(50% - 2rem);
     transform: translateY(-50%);
     position: absolute;
     z-index: 10;
+    transition: all 0.3s linear;
 
     @media (max-width: 768px) {
       font-size: 1.5rem;
@@ -40,23 +41,15 @@ export const Container = styled.div`
   }
 
   .swiper-button-prev {
-    left: -70px;
-
-    @media (max-width: 768px) {
-      left: 10px;
-    }
+    left: -5%;
   }
 
   .swiper-button-next {
-    right: 5px;
-
-    @media (max-width: 768px) {
-      right: 30px;
-    }
+    right: 2%;
   }
 
   .swiper-pagination {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .swiper-pagination-fraction {
@@ -120,7 +113,7 @@ export const SubText = styled.p`
 
 export const SubTextLight = styled.p`
   font-size: ${(props) => props.theme.fontmd};
-  color: ${(props) => `rgba(${props.theme.textRgba},0.6)`};
+  color: ${(props) => `rgba(${props.theme.textRgba},0.8)`};
   margin: 0.5rem 0;
   text-align: left;
 

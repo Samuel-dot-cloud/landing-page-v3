@@ -64,8 +64,8 @@ export const Title = styled.h2`
 
 export const Subtitle = styled.h3`
   font-size: ${(props) => props.theme.fontlg};
-  color: ${(props) => `rgba(${props.theme.textRgba}, 0.6)`};
-  font-weight: 600;
+  color: ${(props) => `rgba(${props.theme.textRgba}, 0.8)`};
+  font-weight: 500;
   margin-bottom: 1rem;
   width: 80%;
   align-self: flex-start;
