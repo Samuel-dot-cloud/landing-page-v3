@@ -1,3 +1,13 @@
 # Ignore artifacts:
-build
-coverage
+node_modules
+.next
+.husky
+prettierignore
+.stylelintignore
+stories
+storybook-static
+*.log
+playwright-report
+.nyc_output
+test-results
+junit.xml

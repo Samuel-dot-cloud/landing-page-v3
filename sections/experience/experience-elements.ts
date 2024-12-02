@@ -98,7 +98,7 @@ export const LargeTitle = styled.h1`
   margin-bottom: 2rem;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   font-size: ${(props) => props.theme.fontxl};
   text-transform: capitalize;
   width: 100%;

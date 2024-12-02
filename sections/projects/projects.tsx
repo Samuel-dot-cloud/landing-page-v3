@@ -179,8 +179,8 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           key={techData.name}
                         >
-                          <StyledTech>
-                            <techData.icon size={20} />
+                          <StyledTech aria-label={techData.name}>
+                            <techData.icon size={20} aria-hidden="true" />
                             <span>{techData.name}</span>
                           </StyledTech>
                         </Link>
@@ -193,8 +193,13 @@ const Projects = () => {
                         href={project.downloadLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="Download live app"
                       >
-                        <FiDownload size={18} />
+                        <FiDownload
+                          size={18}
+                          title="Download"
+                          aria-hidden="true"
+                        />
                         <span>Download</span>
                       </StyledButton>
                     )}
@@ -203,8 +208,9 @@ const Projects = () => {
                         href={project.sourceLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="View source code on GitHub"
                       >
-                        <SiGithub size={18} />
+                        <SiGithub size={18} title="Github" aria-hidden="true" />
                         <span>Source code</span>
                       </StyledButton>
                     )}
@@ -214,8 +220,20 @@ const Projects = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiper-button-prev" onClick={() => sound.play()}></div>
-        <div className="swiper-button-next" onClick={() => sound.play()}></div>
+        <div
+          className="swiper-button-prev"
+          onClick={() => sound.play()}
+          aria-label="Previous slide"
+          role="button"
+          tabIndex={0}
+        ></div>
+        <div
+          className="swiper-button-next"
+          onClick={() => sound.play()}
+          aria-label="Next slide"
+          role="button"
+          tabIndex={0}
+        ></div>
       </Container>
     </Section>
   );
