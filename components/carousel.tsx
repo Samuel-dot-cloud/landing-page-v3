@@ -5,21 +5,21 @@ import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { SwiperModule } from "swiper/types";
 import { Howl } from "howler";
+import {
+  Autoplay,
+  EffectCards,
+  Keyboard,
+  Navigation,
+  Pagination,
+} from "swiper";
 
 export interface CarouselItem {
   id: number;
   image: string;
 }
 
-const Carousel = ({
-  modules,
-  items,
-}: {
-  modules: SwiperModule[];
-  items: CarouselItem[];
-}) => {
+const Carousel = ({ items }: { items: CarouselItem[] }) => {
   const sound = new Howl({
     src: ["/turn.mp3"],
     rate: 1.5,
@@ -40,6 +40,11 @@ const Carousel = ({
         scrollbar={{
           draggable: true,
         }}
+        keyboard={{
+          enabled: true,
+          onlyInViewport: true,
+        }}
+        loop={true}
         onTransitionStart={() => {
           if (isManualTurn) {
             sound.play();
@@ -57,10 +62,13 @@ const Carousel = ({
         onClick={() => {
           isManualTurn = true;
         }}
+        onKeyPress={() => {
+          isManualTurn = true;
+        }}
         navigation={false}
         effect={"cards"}
         grabCursor={true}
-        modules={modules}
+        modules={[EffectCards, Pagination, Navigation, Autoplay, Keyboard]}
         className="mySwiper"
       >
         {items.map((item) => (

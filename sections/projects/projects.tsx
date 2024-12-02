@@ -18,7 +18,7 @@ import { SiDart, SiGithub, SiTauri } from "react-icons/si";
 import { BiLogoFirebase, BiLogoTypescript } from "react-icons/bi";
 import { FaReact, FaRust, FaSwift } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Keyboard } from "swiper";
 import { FiDownload } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -126,7 +126,7 @@ const Projects = () => {
       <LargeTitle>Projects</LargeTitle>
       <Container>
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination, Keyboard]}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -137,6 +137,10 @@ const Projects = () => {
           slidesPerView={1}
           className="mySwiper"
           allowTouchMove={true}
+          keyboard={{
+            enabled: true,
+            onlyInViewport: true,
+          }}
           onTransitionStart={() => {
             if (isManualTurn) {
               sound.play();
@@ -147,6 +151,9 @@ const Projects = () => {
             isManualTurn = true;
           }}
           onClick={() => {
+            isManualTurn = true;
+          }}
+          onKeyPress={() => {
             isManualTurn = true;
           }}
         >

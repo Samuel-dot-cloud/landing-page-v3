@@ -1,5 +1,4 @@
 import Carousel, { CarouselItem } from "../../components/carousel";
-import { Autoplay, EffectCards, Navigation, Pagination } from "swiper";
 import {
   Box,
   Container,
@@ -45,10 +44,7 @@ const BooksSection = () => {
     <Section>
       <Container>
         <Box>
-          <Carousel
-            modules={[EffectCards, Pagination, Navigation, Autoplay]}
-            items={bookItems}
-          />
+          <Carousel items={bookItems} />
         </Box>
         <Box>
           <Title>Books</Title>
